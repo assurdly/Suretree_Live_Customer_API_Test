@@ -1,4 +1,4 @@
-name: Postman Test and Allure Report
+name: Postman Test and Allure Report for Naira Compare
 
 on:
   push:
