@@ -1,1 +1,0 @@
-level: log, messages: Oluwaseun {{LastName}},Realty Oga Loan
