@@ -5521,13 +5521,13 @@
 							"script": {
 								"id": "3f883512-5570-46b1-8d62-068f15d66a44",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name has bad request\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Your test message\", function () {\r",
+									"pm.test(\"Verify that message returns invalid bvn\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.message).to.eql(\"Invalid BVN!\");\r",
 									"});"
@@ -5564,13 +5564,13 @@
 							"script": {
 								"id": "3f883512-5570-46b1-8d62-068f15d66a44",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Your test success\", function () {\r",
+									"pm.test(\"Verify that response success is false\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.success).to.eql(false);\r",
 									"});"
@@ -5613,13 +5613,13 @@
 							"script": {
 								"id": "63cd2978-d18d-46fc-b1b9-d789f9b80a03",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Test Code name has a String\", function () {\r",
+									"pm.test(\"Verify that Test Code name has a String\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Test Credit card Score\", function () {\r",
+									"pm.test(\"Verify that Test Credit card Score is an integer\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.data.score).to.eql(618);\r",
 									"});"
@@ -5662,10 +5662,10 @@
 							"script": {
 								"id": "4b3227d5-48fe-4c99-a59a-c3a4e88b6225",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {\r",
+									"pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Test Code name has a string\", function () {\r",
+									"pm.test(\"Verify that Test Code name has Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});"
 								],
@@ -5704,10 +5704,10 @@
 							"script": {
 								"id": "49496166-7ddb-4d88-96dc-4201ba4d72de",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {\r",
+									"pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Test Code name has a string\", function () {\r",
+									"pm.test(\"Verify that Test Code name is Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});"
 								],
