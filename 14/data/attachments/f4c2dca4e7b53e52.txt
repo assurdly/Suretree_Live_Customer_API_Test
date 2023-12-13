@@ -1,1 +1,0 @@
-{"SuccessMessage":"Registration Successful","ErrorMessage":null,"ResponseCode":200,"Total":0,"TotalPages":0,"RowsPerPage":0,"PageItemsCount":0,"PageNumber":0,"QueryString":"","List":null,"Details":"mdSSI5\u002Bq7FQF6y9D\u002BKVwzMCyJzHfhzT0fEw6SGfiCkSYGxiE7yCr5yIqHQ24dk3eMRFqQL56I8hO857p1XPH6A=="}
