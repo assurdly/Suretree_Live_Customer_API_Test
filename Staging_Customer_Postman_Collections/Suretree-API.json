@@ -1767,20 +1767,20 @@
 									"script": {
 										"id": "10ccff5f-6aa4-4443-a140-bd6e17240180",
 										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
+											"pm.test(\"Verify that Status code is 400\", function () {\r",
 											"    pm.response.to.have.status(400);\r",
 											"});\r",
-											"pm.test(\"Status code name has Bad Request\", function () {\r",
+											"pm.test(\"Verify that Status code name has Bad Request\", function () {\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
-											"pm.test(\"successMessage is null\", function () {\r",
+											"pm.test(\"Verify that successMessage is null\", function () {\r",
 											"    pm.expect(Response.successMessage).to.eql(null)\r",
 											"});\r",
-											"pm.test(\"ErrorMessage is Contact address2 is required.\", function () {\r",
+											"pm.test(\"Verify that ErrorMessage is Contact address2 is required.\", function () {\r",
 											"    pm.expect(Response.errorMessage).to.eql(\"Contact address2 is required.\")\r",
 											"});\r",
-											"pm.test(\"ResponseCode is 400\", function () {\r",
+											"pm.test(\"Verify that ResponseCode is 400\", function () {\r",
 											"    pm.expect(Response.responseCode).to.eql(400)\r",
 											"});"
 										],
@@ -1826,6 +1826,514 @@
 						}
 					],
 					"id": "c8e5ab25-596d-4e30-a280-6a0f98fd4aba"
+				},
+				{
+					"name": "Children Savings",
+					"item": [
+						{
+							"name": "Children Savings Application",
+							"item": [
+								{
+									"name": "Children Savings Application- Successful",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Verify that Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"pm.test(\"Verify that Status code name has OK\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"Verify that success message returns savings application saved successfully\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(\"Saving application saved successfully.\")\r",
+													"});\r",
+													"pm.test(\"Verify that Error message is null\", function () {\r",
+													"    pm.expect(Response.errorMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"Verify that responseCode is 200\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(200)\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "a925a408-7476-4fa4-a629-487b47eca45e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"mini\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"{{$randomInt}}\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application- Without First Name",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has Bad Request\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"successMessage is null\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"response Code is 400\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(400)\r",
+													"});\r",
+													"pm.test(\"Error message is 'First name is required'\", function () {\r",
+													"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "c6204129-5afb-42e2-8aa1-1eec82cba70f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application-without Last Name",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has Bad Request\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"successMessage is null\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"response Code is 400\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(400)\r",
+													"});\r",
+													"// pm.test(\"Message is 'Last Name is required'\", function () {\r",
+													"//     pm.expect(Response.errorMessage).to.eql(\"Last Name is required.\")\r",
+													"// });\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "da3616a6-5361-435e-8ee2-a9c6cee11537",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application- Empty Email Address",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has Bad Request\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"successMessage is null\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"response Code is 400\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(400)\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Message is 'Email Address is required'\", function () {\r",
+													" pm.expect(Response.errorMessage).to.eql(\"Email address is required.\")\r",
+													" });\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "11646781-7cbc-4470-b263-75b73c8739be",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application- Empty Marital Status",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has Bad Request\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"successMessage is null\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"response Code is 400\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(400)\r",
+													"});\r",
+													"pm.test(\"Message is 'Marital Status is required'\", function () {\r",
+													"    pm.expect(Response.errorMessage).to.eql(\"Marital status is required.\")\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "b81629db-ddb2-405e-b774-911c8be76294",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application- Empty Gender",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has Bad Request\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"successMessage is null\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"response Code is 400\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(400)\r",
+													"});\r",
+													"pm.test(\"Error Message is 'Gender is required'\", function () {\r",
+													"    pm.expect(Response.errorMessage).to.eql(\"Gender is required.\")\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "59377edc-8ce5-452e-997c-c5703ad55287",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@genada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application - Empty Date of Birth",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has Bad Request\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"successMessage is null\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"response Code is 400\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(400)\r",
+													"});\r",
+													"pm.test(\"Message is Phone Number is required\", function () {\r",
+													"    pm.expect(Response.errorMessage).to.eql(\"Date of birth is required.\")\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "51778593-b359-4e65-9e0d-c2bcd8f31d13",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@genada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application- Empty Phone number",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has Bad Request\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"successMessage is null\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"response Code is 400\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(400)\r",
+													"});\r",
+													"pm.test(\"Message is Phone Number is required\", function () {\r",
+													"    pm.expect(Response.errorMessage).to.eql(\"Phone number is required.\")\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "761e1fc2-d755-4d63-a326-508308901697",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"mini\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application- Empty MotherMaidenName",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has Bad Request\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"var Response = pm.response.json()\r",
+													"pm.test(\"successMessage is null\", function () {\r",
+													"    pm.expect(Response.successMessage).to.eql(null)\r",
+													"});\r",
+													"pm.test(\"response Code is 400\", function () {\r",
+													"    pm.expect(Response.responseCode).to.eql(400)\r",
+													"});\r",
+													"pm.test(\"Message is Phone Number is required\", function () {\r",
+													"    pm.expect(Response.errorMessage).to.eql(\"Mother's maiden name is required.\")\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "a63d9fbe-8ebe-44d1-ba38-1e589113da8c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"mini\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								},
+								{
+									"name": "Children Savings Application- Invalid/ Mismatched Auth Token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"pm.test(\"Status code name has Unauthorized\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "73ff57bc-16d5-4f1a-854e-ebcbf3effd09",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cY7JIkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjRkMGI4NzgzLWJiZTktNGVlNy1iNDA4LWU4NDBkMTVkZWVhZCIsIkN1c3RvbWVySWQiOiJiNzU1OTU5MC0yYWFmLTQxMmItOWQzOS01NTNhYWI3NjljNDUiLCJVc2VyRnVsbE5hbWUiOiJPbHV3YXNldW4gRGFkYSIsIkVtYWlsIjoicmVAeW9wbWFpbC5jb20iLCJqdGkiOiJiOWVlNTc1Zi0yNmMxLTQ4NWEtYTM1Mi05YmNhYTA4YmFiNzgiLCJQaG9uZU51bWJlciI6IisyMzQ4MTA2OTA3Nzg2IiwibmJmIjoxNjk4OTIyNTM3LCJleHAiOjE2OTg5MjM3MzcsImlhdCI6MTY5ODkyMjUzN30.1QyQ_wtzNYYxq9XbaH4hJNDXt7TReoUrOPBOa4sLEsM"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"mini\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+									},
+									"response": []
+								}
+							],
+							"id": "18c2e7a9-fd6c-4de9-8a16-2ef4845e615a"
+						}
+					],
+					"id": "ed8ec235-50b8-4b04-89c9-e144d60806a9"
 				},
 				{
 					"name": "Personal Savings",
@@ -2337,46 +2845,41 @@
 								}
 							],
 							"id": "ac239720-a8b3-4b35-877e-1c4694e09f25"
-						}
-					],
-					"id": "def9ae2e-914e-4007-abc6-4ed14751727f"
-				},
-				{
-					"name": "Children Savings",
-					"item": [
+						},
 						{
-							"name": "Children Savings Application",
+							"name": "Save Personal Savings Application for Later Copy",
 							"item": [
 								{
-									"name": "Children Savings Application- Successful",
+									"name": "Save Personal Savings Application for Later",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
+												"id": "976bfaa8-c4ae-4a0d-b065-a630cc540d42",
 												"exec": [
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
+													"pm.test(\"Status code is 201\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
 													"});\r",
-													"pm.test(\"Status code name has OK\", function () {\r",
-													"    pm.response.to.have.status(\"OK\");\r",
+													"pm.test(\"Status code name has Created\", function () {\r",
+													"    pm.response.to.have.status(\"Created\");\r",
 													"});\r",
 													"var Response = pm.response.json()\r",
-													"pm.test(\"isSuccess is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(\"Saving application saved successfully.\")\r",
+													"pm.test(\"isSuccess is true\", function () {\r",
+													"    pm.expect(Response.isSuccess).to.eql(true)\r",
 													"});\r",
-													"pm.test(\"Error message\", function () {\r",
-													"    pm.expect(Response.errorMessage).to.eql(null)\r",
+													"pm.test(\"Message is Data Saved Successfuly\", function () {\r",
+													"    pm.expect(Response.message).to.eql(\"Data Saved Successfuly\")\r",
 													"});\r",
-													"pm.test(\"statusCode is 200\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(200)\r",
+													"\r",
+													"pm.test(\"statusCode is 201\", function () {\r",
+													"    pm.expect(Response.statusCode).to.eql(201)\r",
 													"});"
 												],
 												"type": "text/javascript"
 											}
 										}
 									],
-									"id": "a925a408-7476-4fa4-a629-487b47eca45e",
+									"id": "d17a6edd-d919-43d1-a2df-15266a837006",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -2385,525 +2888,22 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"mini\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"{{$randomInt}}\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
+											"raw": "{\r\n    \"EmailAddress\": \"test-dev-suretree@yopmail.com\",\r\n    \"ApplicationJsonPayload\": \"{\\\"personalDetails\\\":{\\\"title\\\":\\\"Mr\\\",\\\"firstName\\\":\\\"test\\\",\\\"middleName\\\":null,\\\"lastName\\\":\\\"test\\\",\\\"emailAddress\\\":\\\"test-dev-suretree@yopmail.com\\\",\\\"phoneNumber\\\":\\\"+2341111111111\\\",\\\"maritalStatusId\\\":\\\"\\\",\\\"gender\\\":\\\"male\\\",\\\"dob\\\":\\\"2005-08-13T00:00:00\\\",\\\"passportPictureFileSystemId\\\":\\\"\\\",\\\"personalDetailIdtype\\\":\\\"\\\",\\\"personalDetailIdtypeFileSystemId\\\":\\\"\\\"},\\\"homeAddressDetails\\\":{\\\"nigerianAddressAddress1\\\":\\\"\\\",\\\"nigerianAddressAddress2\\\":\\\"\\\",\\\"nigerianAddressCountryOfResidenceId\\\":null,\\\"nigerianAddressState\\\":null,\\\"nigerianAddressLga\\\":null,\\\"nigerianAddressTownCity\\\":\\\"\\\",\\\"nigerianAddressProofOfAddressFileSystemId\\\":\\\"\\\",\\\"ecowasregionAddress1\\\":\\\"\\\",\\\"ecowasregionAddress2\\\":\\\"\\\",\\\"ecowasregionCountryOfResidenceId\\\":null,\\\"ecowasregionState\\\":null,\\\"ecowasregionLga\\\":null,\\\"ecowasregionTownCity\\\":\\\"\\\",\\\"ecowasregionBiodataFileSystemId\\\":\\\"\\\",\\\"ecowasregionProofOfAddressFileSystemId\\\":\\\"\\\",\\\"ecowasregionWorkPermitBiodataSystemId\\\":\\\"\\\"},\\\"bankAccountDetails\\\":{\\\"customerVerificationNumber\\\":\\\"\\\",\\\"accountNumber\\\":\\\"\\\",\\\"bankId\\\":\\\"\\\",\\\"accountName\\\":\\\"\\\"},\\\"additionaFields\\\":{},\\\"depositAmount\\\":\\\"100000\\\",\\\"durationOfSavings\\\":\\\"3\\\",\\\"productId\\\":\\\"641d798f-d143-4f8a-9d66-c670c9cbd988\\\",\\\"categoryId\\\":\\\"4d6e702c-7654-4e9a-b8b9-2b44cabf6476\\\",\\\"userConsent\\\":null,\\\"productProviderDetails\\\":\\\"{\\\\\\\"productName\\\\\\\":\\\\\\\"Bluechip\\\\\\\",\\\\\\\"productSeoMetaTagUrlSlug\\\\\\\":\\\\\\\"undefined-bluechip\\\\\\\",\\\\\\\"providerName\\\\\\\":\\\\\\\"CIT Microfinance Bank Limited\\\\\\\",\\\\\\\"providerSeoMetaTagUrlSlug\\\\\\\":\\\\\\\"cit-microfinance-bank-limited\\\\\\\",\\\\\\\"categorySlug\\\\\\\":\\\\\\\"personal-savings-account\\\\\\\",\\\\\\\"minAmount\\\\\\\":500,\\\\\\\"maxAmount\\\\\\\":1000000,\\\\\\\"minDuration\\\\\\\":1,\\\\\\\"maxDuration\\\\\\\":12,\\\\\\\"minRate\\\\\\\":6,\\\\\\\"maxRate\\\\\\\":9,\\\\\\\"providerFileSystemID\\\\\\\":\\\\\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\\\\\",\\\\\\\"savedSavingsApplicationId\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"isInterestRateInRange\\\\\\\":\\\\\\\"0\\\\\\\"}\\\"}\",\r\n    \"CurrentStep\": 1,\r\n    \"ProductType\": \"4d6e702c-7654-4e9a-b8b9-2b44cabf6476\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application- Without First Name",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"pm.test(\"Status code name has Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"var Response = pm.response.json()\r",
-													"pm.test(\"successMessage is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(null)\r",
-													"});\r",
-													"pm.test(\"response Code is 400\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(400)\r",
-													"});\r",
-													"pm.test(\"Error message is 'First name is required'\", function () {\r",
-													"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "c6204129-5afb-42e2-8aa1-1eec82cba70f",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application-without Last Name",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"pm.test(\"Status code name has Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"var Response = pm.response.json()\r",
-													"pm.test(\"successMessage is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(null)\r",
-													"});\r",
-													"pm.test(\"response Code is 400\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(400)\r",
-													"});\r",
-													"// pm.test(\"Message is 'Last Name is required'\", function () {\r",
-													"//     pm.expect(Response.errorMessage).to.eql(\"Last Name is required.\")\r",
-													"// });\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "da3616a6-5361-435e-8ee2-a9c6cee11537",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application- Empty Email Address",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"pm.test(\"Status code name has Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"var Response = pm.response.json()\r",
-													"pm.test(\"successMessage is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(null)\r",
-													"});\r",
-													"pm.test(\"response Code is 400\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(400)\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Message is 'Email Address is required'\", function () {\r",
-													" pm.expect(Response.errorMessage).to.eql(\"Email address is required.\")\r",
-													" });\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "11646781-7cbc-4470-b263-75b73c8739be",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application- Empty Marital Status",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"pm.test(\"Status code name has Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"var Response = pm.response.json()\r",
-													"pm.test(\"successMessage is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(null)\r",
-													"});\r",
-													"pm.test(\"response Code is 400\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(400)\r",
-													"});\r",
-													"pm.test(\"Message is 'Marital Status is required'\", function () {\r",
-													"    pm.expect(Response.errorMessage).to.eql(\"Marital status is required.\")\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "b81629db-ddb2-405e-b774-911c8be76294",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application- Empty Gender",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"pm.test(\"Status code name has Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"var Response = pm.response.json()\r",
-													"pm.test(\"successMessage is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(null)\r",
-													"});\r",
-													"pm.test(\"response Code is 400\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(400)\r",
-													"});\r",
-													"pm.test(\"Error Message is 'Gender is required'\", function () {\r",
-													"    pm.expect(Response.errorMessage).to.eql(\"Gender is required.\")\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "59377edc-8ce5-452e-997c-c5703ad55287",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@genada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application - Empty Date of Birth",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"pm.test(\"Status code name has Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"var Response = pm.response.json()\r",
-													"pm.test(\"successMessage is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(null)\r",
-													"});\r",
-													"pm.test(\"response Code is 400\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(400)\r",
-													"});\r",
-													"pm.test(\"Message is Phone Number is required\", function () {\r",
-													"    pm.expect(Response.errorMessage).to.eql(\"Date of birth is required.\")\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "51778593-b359-4e65-9e0d-c2bcd8f31d13",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@genada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"minni\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application- Empty Phone number",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"pm.test(\"Status code name has Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"var Response = pm.response.json()\r",
-													"pm.test(\"successMessage is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(null)\r",
-													"});\r",
-													"pm.test(\"response Code is 400\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(400)\r",
-													"});\r",
-													"pm.test(\"Message is Phone Number is required\", function () {\r",
-													"    pm.expect(Response.errorMessage).to.eql(\"Phone number is required.\")\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "761e1fc2-d755-4d63-a326-508308901697",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"mini\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application- Empty MotherMaidenName",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"pm.test(\"Status code name has Bad Request\", function () {\r",
-													"    pm.response.to.have.status(\"Bad Request\");\r",
-													"});\r",
-													"var Response = pm.response.json()\r",
-													"pm.test(\"successMessage is null\", function () {\r",
-													"    pm.expect(Response.successMessage).to.eql(null)\r",
-													"});\r",
-													"pm.test(\"response Code is 400\", function () {\r",
-													"    pm.expect(Response.responseCode).to.eql(400)\r",
-													"});\r",
-													"pm.test(\"Message is Phone Number is required\", function () {\r",
-													"    pm.expect(Response.errorMessage).to.eql(\"Mother's maiden name is required.\")\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "a63d9fbe-8ebe-44d1-ba38-1e589113da8c",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"mini\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
-									},
-									"response": []
-								},
-								{
-									"name": "Children Savings Application- Invalid/ Mismatched Auth Token",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "bf96f793-a5a9-4090-a1e4-194e72d65fd9",
-												"exec": [
-													"pm.test(\"Status code is 401\", function () {\r",
-													"    pm.response.to.have.status(401);\r",
-													"});\r",
-													"pm.test(\"Status code name has Unauthorized\", function () {\r",
-													"    pm.response.to.have.status(\"Unauthorized\");\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "73ff57bc-16d5-4f1a-854e-ebcbf3effd09",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "eyJhbGciOiJIUzI1NiIsInR5cY7JIkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjRkMGI4NzgzLWJiZTktNGVlNy1iNDA4LWU4NDBkMTVkZWVhZCIsIkN1c3RvbWVySWQiOiJiNzU1OTU5MC0yYWFmLTQxMmItOWQzOS01NTNhYWI3NjljNDUiLCJVc2VyRnVsbE5hbWUiOiJPbHV3YXNldW4gRGFkYSIsIkVtYWlsIjoicmVAeW9wbWFpbC5jb20iLCJqdGkiOiJiOWVlNTc1Zi0yNmMxLTQ4NWEtYTM1Mi05YmNhYTA4YmFiNzgiLCJQaG9uZU51bWJlciI6IisyMzQ4MTA2OTA3Nzg2IiwibmJmIjoxNjk4OTIyNTM3LCJleHAiOjE2OTg5MjM3MzcsImlhdCI6MTY5ODkyMjUzN30.1QyQ_wtzNYYxq9XbaH4hJNDXt7TReoUrOPBOa4sLEsM"
-											}
-										},
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"personalDetail\": {\r\n        \"isDualCitizenship\": null,\r\n        \"emailAddress\": \"minnie@getnada.com\",\r\n        \"phoneNumber\": \"+2347011725297\",\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"mini\",\r\n        \"middleName\": \"Test\",\r\n        \"lastName\": \"Dee\",\r\n        \"maritalStatusId\": \"bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1\",\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1990-03-10T00:00:00\",\r\n        \"motherMaidenName\": \"Tafmail\",\r\n        \"nonNigerianNationalityId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\",\r\n        \"stateOfOriginId\": \"075ed228-38bf-4ef5-a377-9909a683ea62\",\r\n        \"localGovernmentAreaOfOriginId\": \"4C70AA00-26DF-47A5-80F7-BA1F0F73BBE5\",\r\n        \"residentPermitNo\": \"2223334445556\",\r\n        \"taxIdentificationNo\": null,\r\n        \"contactAddress1\": \"11 Test Str\",\r\n        \"contactAddress2\": \"Test\",\r\n        \"AddressLandmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea84\",\r\n        \"addressLGAID\": \"A890451C-2C3A-406C-9B49-BD7720D7F390\",\r\n        \"city\": \"Isolo\",\r\n        \"alternativePhoneNumber\": \"08123456789\",\r\n        \"mailingAddress\": null\r\n    },\r\n    \"customerIdentity\": {\r\n        \"idType\": \"National ID Card (NIN)\",\r\n        \"idNo\": \"98777543268\",\r\n        \"idDateIssued\": \"2016-05-08T23:00:00.000Z\",\r\n        \"idExpiryDate\": \"2023-05-25T23:00:00.000Z\"\r\n    },\r\n    \"customerEmploymentDetail\": {\r\n        \"employmentStatusId\": \"7BBBF4E0-7304-473E-99D1-C0E7D211B697\",\r\n        \"occupation\": \"Student\",\r\n        \"currentEmployersName\": \"Suretere\",\r\n        \"dateOfEmployment\": \"2022-08-21T23:00:00.000Z\",\r\n        \"addressLine1\": \"6\",\r\n        \"addressLine2\": \"wahab\",\r\n        \"landmark\": \"isolo\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"addressLocalGovernmentAreaId\": \"80777F8A-7B4E-471F-AC4A-FB682FB717C0\",\r\n        \"city\": \"yaba\",\r\n        \"officePhoneNumber\": \"09087655432\",\r\n        \"designationId\": \"8766fe83-54da-4704-976e-eff3ef82e1e3\"\r\n    },\r\n    \"nextOfKin\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Ekene\",\r\n        \"middleName\": \"\",\r\n        \"lastName\": \"Tafmail\",\r\n        \"gender\": \"Female\",\r\n        \"dob\": \"2001-06-11T23:00:00.000Z\",\r\n        \"relationship\": \"Sister\",\r\n        \"emailAddress\": \"Ekene@tafmail.com\",\r\n        \"addressLine1\": \"11 Test strt\",\r\n        \"addressLine2\": \"elege\",\r\n        \"landMark\": \"Test\",\r\n        \"countryStateId\": \"075ed228-38bf-4ef5-a377-9909a683ea61\",\r\n        \"city\": \"ikeja\",\r\n        \"phoneNumber\": \"07011725297\",\r\n        \"alternativePhoneNumber\": \"\"\r\n    },\r\n    \"applicationRequirementDocument\": [\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (1).png\",\r\n            \"fileSystemId\": \"085bd935-8dcb-4054-afaf-a6aa455dc88p\",\r\n            \"requirementId\": \"ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519\",\r\n            \"description\": \"National Identification Card\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (1).png\"\r\n        },\r\n        {\r\n            \"customerLoanApplicationDocumentId\": \"\",\r\n            \"customerApplicationId\": \"\",\r\n            \"isUploaded\": true,\r\n            \"fileName\": \"Screenshot (2).png\",\r\n            \"fileSystemId\": \"d3beb58b-e0eb-427b-9346-25909060568c\",\r\n            \"requirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\r\n            \"description\": \"International Passport\",\r\n            \"customerApplicationType\": \"Savings\",\r\n            \"fileSystemName\": \"Screenshot (2).png\"\r\n        }\r\n    ],\r\n    \"additionaFields\": {},\r\n    \"depositAmount\": \"10000\",\r\n    \"durationOfSavings\": 1,\r\n    \"signatureType\": \"Upload Signature\",\r\n    \"productProviderDetails\": \"{\\\"productName\\\":\\\"Bluechip\\\",\\\"productSeoMetaTagUrlSlug\\\":\\\"undefined-bluechip\\\",\\\"providerName\\\":\\\"CIT Microfinance Bank Limited\\\",\\\"providerSeoMetaTagUrlSlug\\\":\\\"cit-microfinance-bank-limited\\\",\\\"categorySlug\\\":\\\"children-savings-account\\\",\\\"minAmount\\\":500,\\\"maxAmount\\\":1000000,\\\"minDuration\\\":1,\\\"maxDuration\\\":12,\\\"minRate\\\":6,\\\"maxRate\\\":9,\\\"providerFileSystemID\\\":\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\",\\\"savedSavingsApplicationId\\\":\\\"\\\"}\",\r\n    \"signatureValue\": \"df022cd2-c168-429e-a505-5b507d278340\",\r\n    \"productId\": \"641d798f-d143-4f8a-9d66-c670c9cbd988\",\r\n    \"categoryId\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\",\r\n    \"cardType\": \"Mastercard\",\r\n    \"transactionAlertPreference\": \"Email Alert(free)\",\r\n    \"electronicBankingPreference\": \"ATM\",\r\n    \"savingsStatus\": \"Savings Pending\",\r\n    \"isSavingsApplicationAccountSetup\": false,\r\n    \"campaignID\": \"\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/Savings/SaveSavingsApplication"
+										"url": "{{baseUrl}}/api/v2/PersonalSavings/save-application-for-later"
 									},
 									"response": []
 								}
 							],
-							"id": "18c2e7a9-fd6c-4de9-8a16-2ef4845e615a"
+							"id": "61933803-4f2b-4ec6-9f05-6d75c614bc5d"
 						}
 					],
-					"id": "ed8ec235-50b8-4b04-89c9-e144d60806a9"
-				},
-				{
-					"name": "Save Personal Savings Application for Later Copy",
-					"item": [
-						{
-							"name": "Save Personal Savings Application for Later",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "976bfaa8-c4ae-4a0d-b065-a630cc540d42",
-										"exec": [
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
-											"});\r",
-											"pm.test(\"Status code name has Created\", function () {\r",
-											"    pm.response.to.have.status(\"Created\");\r",
-											"});\r",
-											"var Response = pm.response.json()\r",
-											"pm.test(\"isSuccess is true\", function () {\r",
-											"    pm.expect(Response.isSuccess).to.eql(true)\r",
-											"});\r",
-											"pm.test(\"Message is Data Saved Successfuly\", function () {\r",
-											"    pm.expect(Response.message).to.eql(\"Data Saved Successfuly\")\r",
-											"});\r",
-											"\r",
-											"pm.test(\"statusCode is 201\", function () {\r",
-											"    pm.expect(Response.statusCode).to.eql(201)\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "d17a6edd-d919-43d1-a2df-15266a837006",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"EmailAddress\": \"test-dev-suretree@yopmail.com\",\r\n    \"ApplicationJsonPayload\": \"{\\\"personalDetails\\\":{\\\"title\\\":\\\"Mr\\\",\\\"firstName\\\":\\\"test\\\",\\\"middleName\\\":null,\\\"lastName\\\":\\\"test\\\",\\\"emailAddress\\\":\\\"test-dev-suretree@yopmail.com\\\",\\\"phoneNumber\\\":\\\"+2341111111111\\\",\\\"maritalStatusId\\\":\\\"\\\",\\\"gender\\\":\\\"male\\\",\\\"dob\\\":\\\"2005-08-13T00:00:00\\\",\\\"passportPictureFileSystemId\\\":\\\"\\\",\\\"personalDetailIdtype\\\":\\\"\\\",\\\"personalDetailIdtypeFileSystemId\\\":\\\"\\\"},\\\"homeAddressDetails\\\":{\\\"nigerianAddressAddress1\\\":\\\"\\\",\\\"nigerianAddressAddress2\\\":\\\"\\\",\\\"nigerianAddressCountryOfResidenceId\\\":null,\\\"nigerianAddressState\\\":null,\\\"nigerianAddressLga\\\":null,\\\"nigerianAddressTownCity\\\":\\\"\\\",\\\"nigerianAddressProofOfAddressFileSystemId\\\":\\\"\\\",\\\"ecowasregionAddress1\\\":\\\"\\\",\\\"ecowasregionAddress2\\\":\\\"\\\",\\\"ecowasregionCountryOfResidenceId\\\":null,\\\"ecowasregionState\\\":null,\\\"ecowasregionLga\\\":null,\\\"ecowasregionTownCity\\\":\\\"\\\",\\\"ecowasregionBiodataFileSystemId\\\":\\\"\\\",\\\"ecowasregionProofOfAddressFileSystemId\\\":\\\"\\\",\\\"ecowasregionWorkPermitBiodataSystemId\\\":\\\"\\\"},\\\"bankAccountDetails\\\":{\\\"customerVerificationNumber\\\":\\\"\\\",\\\"accountNumber\\\":\\\"\\\",\\\"bankId\\\":\\\"\\\",\\\"accountName\\\":\\\"\\\"},\\\"additionaFields\\\":{},\\\"depositAmount\\\":\\\"100000\\\",\\\"durationOfSavings\\\":\\\"3\\\",\\\"productId\\\":\\\"641d798f-d143-4f8a-9d66-c670c9cbd988\\\",\\\"categoryId\\\":\\\"4d6e702c-7654-4e9a-b8b9-2b44cabf6476\\\",\\\"userConsent\\\":null,\\\"productProviderDetails\\\":\\\"{\\\\\\\"productName\\\\\\\":\\\\\\\"Bluechip\\\\\\\",\\\\\\\"productSeoMetaTagUrlSlug\\\\\\\":\\\\\\\"undefined-bluechip\\\\\\\",\\\\\\\"providerName\\\\\\\":\\\\\\\"CIT Microfinance Bank Limited\\\\\\\",\\\\\\\"providerSeoMetaTagUrlSlug\\\\\\\":\\\\\\\"cit-microfinance-bank-limited\\\\\\\",\\\\\\\"categorySlug\\\\\\\":\\\\\\\"personal-savings-account\\\\\\\",\\\\\\\"minAmount\\\\\\\":500,\\\\\\\"maxAmount\\\\\\\":1000000,\\\\\\\"minDuration\\\\\\\":1,\\\\\\\"maxDuration\\\\\\\":12,\\\\\\\"minRate\\\\\\\":6,\\\\\\\"maxRate\\\\\\\":9,\\\\\\\"providerFileSystemID\\\\\\\":\\\\\\\"bad6e24b-7c3d-42ef-ace0-916eca018964\\\\\\\",\\\\\\\"savedSavingsApplicationId\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"isInterestRateInRange\\\\\\\":\\\\\\\"0\\\\\\\"}\\\"}\",\r\n    \"CurrentStep\": 1,\r\n    \"ProductType\": \"4d6e702c-7654-4e9a-b8b9-2b44cabf6476\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/PersonalSavings/save-application-for-later"
-							},
-							"response": []
-						}
-					],
-					"id": "61933803-4f2b-4ec6-9f05-6d75c614bc5d"
+					"id": "def9ae2e-914e-4007-abc6-4ed14751727f"
 				}
 			],
 			"id": "eef25d6d-5465-4a5f-a548-93ec22d121df"
