@@ -6418,10 +6418,10 @@
 							"script": {
 								"id": "239c07d8-ee65-4142-9ee6-b9844c700d0c",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Your test name\", function () {\r",
+									"pm.test(\"Verify that responseCode is 200\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.ResponseCode).to.eql(200);\r",
 									"});"
@@ -6455,10 +6455,10 @@
 							"script": {
 								"id": "239c07d8-ee65-4142-9ee6-b9844c700d0c",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {\r",
+									"pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Test Code name has a string\", function () {\r",
+									"pm.test(\"Verify that Test Code name is Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});"
 								],
@@ -6488,10 +6488,10 @@
 							"script": {
 								"id": "239c07d8-ee65-4142-9ee6-b9844c700d0c",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {\r",
+									"pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Test Code name has a string\", function () {\r",
+									"pm.test(\"Verify that Test Code name is Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});"
 								],
@@ -6530,14 +6530,14 @@
 							"script": {
 								"id": "dacc7e11-bf64-4218-a3e3-3818d5742b9c",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Test SuccessMessage\", function () {\r",
+									"pm.test(\"Verify that SuccessMessage returns Logout successful\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.SuccessMessage).to.eql(\"Logout Successful\");\r",
 									"});\r",
-									"pm.test(\"Test errors\", function () {\r",
+									"pm.test(\"Verify that errorMessage is null\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.ErrorMessage).to.eql(null);\r",
 									"});"
