@@ -5196,7 +5196,7 @@
 									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Verify that Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});"
 								],
@@ -5229,14 +5229,14 @@
 							"script": {
 								"id": "0bf290ce-b6ef-4da4-a155-7c9ef197b8ed",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name has bad request\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"    });\r",
 									"    \r",
-									"pm.test(\"Your test name\", function () {\r",
+									"pm.test(\"Verify that error message returns invalid customer id\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.errorMessage).to.eql(\"Invalid customer ID.\");\r",
 									"\r",
@@ -5271,10 +5271,10 @@
 							"script": {
 								"id": "0bf290ce-b6ef-4da4-a155-7c9ef197b8ed",
 								"exec": [
-									" pm.test(\"Status code is 401\", function () {\r",
+									" pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name has Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});"
 								],
@@ -5307,10 +5307,10 @@
 							"script": {
 								"id": "0bf290ce-b6ef-4da4-a155-7c9ef197b8ed",
 								"exec": [
-									"pm.test(\"Status code is 404\", function () {\r",
+									"pm.test(\"Verify that Status code is 404\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name has Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Not Found\");\r",
 									"});"
 								],
