@@ -9447,10 +9447,10 @@
 			"id": "b4adc672-6c17-4979-9936-00c6db224208"
 		},
 		{
-			"name": "Loans for New User before  Sign Up",
+			"name": "Loans for new user before sign up",
 			"item": [
 				{
-					"name": "PayDay Loans",
+					"name": "Payday Loans",
 					"item": [
 						{
 							"name": "Register New Loan Customer",
@@ -10491,7 +10491,7 @@
 			"id": "a5b2d36a-3bf7-48ec-942b-aaf2e839faad"
 		},
 		{
-			"name": "Loans for New User After Sign Up",
+			"name": "Loans for new user after sign up",
 			"item": [
 				{
 					"name": "PayDay Loans",
@@ -11724,7 +11724,7 @@
 			"id": "34570c06-669f-49d6-a6a0-3a84c9afb696"
 		},
 		{
-			"name": "Business Loan After Sign uP",
+			"name": "Business loan after sign up",
 			"item": [
 				{
 					"name": "SME Business Loan",
@@ -12574,7 +12574,7 @@
 			"id": "b0478bbc-9366-4c86-9b2f-d627031f1b74"
 		},
 		{
-			"name": "Fixed Deposit for Naira compare",
+			"name": "Fixed deposit for naira compare",
 			"item": [
 				{
 					"name": "SMS OTP",
