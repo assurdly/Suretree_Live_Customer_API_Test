@@ -1059,7 +1059,7 @@
 			"id": "034be497-c10b-4092-8d84-944e32238875"
 		},
 		{
-			"name": "View Products",
+			"name": "View products",
 			"item": [
 				{
 					"name": "/api/Products",
@@ -1328,10 +1328,10 @@
 			"id": "634147aa-13d2-4b82-bd54-1de44dc80aa0"
 		},
 		{
-			"name": "Savings For Existing Customer",
+			"name": "Savings for existing customer",
 			"item": [
 				{
-					"name": "Fixed Deposit Savings",
+					"name": "Fixed deposit savings",
 					"item": [
 						{
 							"name": "Fixed Deposit Savings",
