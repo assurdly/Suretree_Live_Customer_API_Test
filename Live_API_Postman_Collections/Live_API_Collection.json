@@ -5189,7 +5189,7 @@
 			"id": "84b26dc1-adf3-43f3-a5bb-eb715337b810"
 		},
 		{
-			"name": "Get User Profile",
+			"name": "Get user profile",
 			"item": [
 				{
 					"name": "User profile",
@@ -5345,7 +5345,7 @@
 			"id": "9cbb2392-3da9-45ad-ac9a-9550653f0169"
 		},
 		{
-			"name": "Credit Score",
+			"name": "Credit score check",
 			"item": [
 				{
 					"name": "Credit score",
@@ -5609,7 +5609,7 @@
 			"id": "2a42e82f-c652-4166-9d6e-d8b9bb1322ce"
 		},
 		{
-			"name": "Credit Score Status",
+			"name": "Credit score status",
 			"item": [
 				{
 					"name": "credit score check succesful",
