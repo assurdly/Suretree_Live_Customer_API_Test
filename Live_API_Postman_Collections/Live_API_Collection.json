@@ -5751,7 +5751,7 @@
 			"id": "3c2e59ce-9349-4386-b168-72b0762674db"
 		},
 		{
-			"name": "View Customers Loan",
+			"name": "View customers loan",
 			"item": [
 				{
 					"name": "view customer loan",
@@ -6098,7 +6098,7 @@
 			"id": "64526334-e326-41f8-b6b6-b04ce01e7146"
 		},
 		{
-			"name": "View Customers Saving",
+			"name": "View customers saving",
 			"item": [
 				{
 					"name": "view customer Saving",
@@ -6414,7 +6414,7 @@
 			"id": "3d64cde4-002c-41fd-b3b8-60e2231f9453"
 		},
 		{
-			"name": "Customer Notification",
+			"name": "Customer notification",
 			"item": [
 				{
 					"name": "User Notification",
@@ -6618,7 +6618,7 @@
 			"id": "acde22d9-e09e-4e4c-969f-ae0c10fca06a"
 		},
 		{
-			"name": "Forgot Password",
+			"name": "Forgot password",
 			"item": [
 				{
 					"name": "Forgot password - Empty Email",
@@ -6915,7 +6915,7 @@
 			"id": "f1c4e8d0-413f-4c47-b90f-00299d52e2ff"
 		},
 		{
-			"name": "Reset Password",
+			"name": "Reset password",
 			"item": [
 				{
 					"name": "Reset Password",
@@ -7286,7 +7286,7 @@
 			"id": "a5969fc2-83a0-4e0d-ac18-02e360f37b77"
 		},
 		{
-			"name": "Savings for New User before Sign Up",
+			"name": "Savings application for new user before sign up",
 			"item": [
 				{
 					"name": "Fixed Deposit",
@@ -8228,7 +8228,7 @@
 			"id": "ed1fe31d-bdfb-4057-9ebc-4a17385bd82f"
 		},
 		{
-			"name": "Savings for New User After Sign Up",
+			"name": "Savings application for new user after sign up",
 			"item": [
 				{
 					"name": "Fixed Deposit",
