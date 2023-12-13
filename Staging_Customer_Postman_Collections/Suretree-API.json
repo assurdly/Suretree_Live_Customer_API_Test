@@ -8723,20 +8723,20 @@
 											"var JsonData = pm.response.json()\r",
 											"pm.collectionVariables.set(\"NewCustomerId\" , JsonData.Details.AccountDetails.CustomerId )*/\r",
 											"\r",
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has OK\", function () {\r",
+											"pm.test(\"verify that Status code name has OK\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
-											"pm.test(\"SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns registration successful\", function () {\r",
 											"    pm.expect(Response.SuccessMessage).to.eql(\"Registration Successful\")\r",
 											"});\r",
-											"pm.test(\"ErrorMessage is null\", function () {\r",
+											"pm.test(\"verify that ErrorMessage is null\", function () {\r",
 											"    pm.expect(Response.ErrorMessage).to.eql(null)\r",
 											"});\r",
-											"pm.test(\"ResponseCode is 200\", function () {\r",
+											"pm.test(\"verify that ResponseCode is 200\", function () {\r",
 											"    pm.expect(Response.ResponseCode).to.eql(200)\r",
 											"});"
 										],
@@ -9605,7 +9605,7 @@
 			"id": "a2030027-df2c-454d-aace-dab89a6432a6"
 		},
 		{
-			"name": "Loan New User(B4 SignUp)) Copy",
+			"name": "Loan application for new user before sign up",
 			"item": [
 				{
 					"name": "PayDay Loans",
@@ -10865,7 +10865,7 @@
 			"id": "f761e23d-1e32-467a-a159-dacd6c949118"
 		},
 		{
-			"name": "Loans New User(After SignUp)) Copy",
+			"name": "Loans application for new user after sign up",
 			"item": [
 				{
 					"name": "PayDay Loans",
@@ -12053,7 +12053,7 @@
 			"id": "5f0d9254-ad95-4301-bab7-4080c71e80e7"
 		},
 		{
-			"name": "Business Loan After SignUP Copy",
+			"name": "Business loan application for new users after sign up",
 			"item": [
 				{
 					"name": "SME Business Loan",
@@ -12912,7 +12912,7 @@
 			"id": "75aaa67b-8b3b-4735-9c53-afdf61ab600c"
 		},
 		{
-			"name": "FIXED DEPOSIT Sprint APIs",
+			"name": "Fixed deposit for naira compare Sprint APIs",
 			"item": [
 				{
 					"name": "SMS OTP",
