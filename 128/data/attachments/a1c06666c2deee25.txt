@@ -1,0 +1,9 @@
+{
+    "FirstName": "Jayce",
+    "LastName": "Cummings",
+    "EmailAddress": "Saige.Dibbert@tafmail.com",
+    "PhoneNumber": "+2347011725297",
+    "Password": "Assurdly01!",
+    "RetypePassword": "Assurdly01!",
+    "Title": "https://qa.nairacompare.ng"
+}

@@ -1,5 +1,0 @@
-{
-    "Email": "Harvey.Breitenberg@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "z953dHK96E7wJvzpNCSNr82bsrmJXIFuGAezDyhfLFWMHqpwGTf6ani9QtFD72L/82F+EHHIRabyUl+AFi2lgw=="
-}
