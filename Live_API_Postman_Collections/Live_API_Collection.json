@@ -1833,7 +1833,7 @@
 					"id": "14acf3fc-9d42-45da-9470-f5b9ed08e19f"
 				},
 				{
-					"name": "Children Savings Application",
+					"name": "Children savings application",
 					"item": [
 						{
 							"name": "Children Savings Application-Successful",
@@ -2387,10 +2387,10 @@
 					"id": "95612818-1c35-407a-9103-e757956ab140"
 				},
 				{
-					"name": "Personal Savings",
+					"name": "Personal savings",
 					"item": [
 						{
-							"name": "Personal Savings Application",
+							"name": "Personal savings application",
 							"item": [
 								{
 									"name": "Personal Savings Application",
@@ -2904,7 +2904,7 @@
 							"id": "b4db1ecd-39c5-461d-a309-be338235aeab"
 						},
 						{
-							"name": "Save Personal Savings Application for Later",
+							"name": "Save personal savings application for Later",
 							"item": [
 								{
 									"name": "Save Personal Savings Application for Later",
@@ -2966,7 +2966,7 @@
 			"id": "6ba2aa4f-f869-4a28-a819-8c9a5bca1ae8"
 		},
 		{
-			"name": "Loans For Existing Customer",
+			"name": "Loans for existing customer",
 			"item": [
 				{
 					"name": "Personal  Loans",
@@ -4642,7 +4642,7 @@
 			"id": "1b0d57d7-5934-48fb-a292-b48281f6448c"
 		},
 		{
-			"name": "Blog Post",
+			"name": "Blog post",
 			"item": [
 				{
 					"name": "Blog Post",
