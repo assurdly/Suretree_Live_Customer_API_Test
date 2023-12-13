@@ -7019,17 +7019,17 @@
 							"script": {
 								"id": "fab0583d-3495-4edd-a714-93132b55661d",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is bad request\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Your test ErrorMessage\", function () {\r",
+									"pm.test(\"Verify that ErrorMessage to include invalid request\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.ErrorMessage).to.eql(\"Invalid request, please confirm that you have the correct Email.\");\r",
 									"});\r",
-									"pm.test(\"ResponseCode returns 400\", function () {\r",
+									"pm.test(\"Verify that ResponseCode returns 400\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.ResponseCode).to.eql(400);\r",
 									"});"
