@@ -1087,15 +1087,15 @@
 							"script": {
 								"id": "dc8cacc8-57db-488f-bfac-9f09ace11adc",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
 									"var jsonData = pm.response.json();\r",
-									"pm.test(\"Your test Details\", function () {\r",
+									"pm.test(\"Verify that response Details returns null\", function () {\r",
 									"    pm.expect(jsonData.Details).to.eql(null);\r",
 									"});\r",
-									"pm.test(\"Your test SuccessMessage\", function () {\r",
+									"pm.test(\"Verify that SuccessMessage returns null\", function () {\r",
 									"    pm.expect(jsonData.SuccessMessage).to.eql(null);\r",
 									"});\r",
 									"\r",
