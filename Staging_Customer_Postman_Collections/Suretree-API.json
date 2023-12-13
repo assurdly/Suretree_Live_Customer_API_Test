@@ -6766,13 +6766,13 @@
 							"script": {
 								"id": "dddb922e-d835-4b14-9dd5-97e926ccaa2b",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is bad request\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Your test ErrorMessage\", function () {\r",
+									"pm.test(\"Verify that ErrorMessage include invalid credentials\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.ErrorMessage).to.eql(\"Oops, invalid credentials.\");\r",
 									"});"
@@ -6815,13 +6815,13 @@
 							"script": {
 								"id": "dddb922e-d835-4b14-9dd5-97e926ccaa2b",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is bad request\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Valid ErrorMessage is returned\", function () {\r",
+									"pm.test(\"Verify that Valid ErrorMessage is returned\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.ErrorMessage).to.include(\"Email is required.\");\r",
 									"});"
@@ -6864,13 +6864,13 @@
 							"script": {
 								"id": "dddb922e-d835-4b14-9dd5-97e926ccaa2b",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Your test SuccessMessage\", function () {\r",
+									"pm.test(\"Verify that SuccessMessage returns password reset link successfully sent\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.SuccessMessage).to.eql(\"Password reset link successfully sent\");\r",
 									"});"
@@ -6919,17 +6919,17 @@
 							"script": {
 								"id": "41db5f1a-c312-4ac4-b07a-8ef860450d4e",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Your test SuccessMessage\", function () {\r",
+									"pm.test(\"Verify that SuccessMessage equals password reset successful\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.SuccessMessage).to.eql(\"Password reset successful\");\r",
 									"});\r",
-									"pm.test(\"Your test ResponseCode\", function () {\r",
+									"pm.test(\"Verify that ResponseCode is 200\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.ResponseCode).to.eql(200);\r",
 									"});"
