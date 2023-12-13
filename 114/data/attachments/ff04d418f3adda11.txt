@@ -1,0 +1,6 @@
+{
+    "Email": "a@acom",
+    "Password": "",
+    "UniqueIDFromFrontEnd": "92aad91c1b8235f4cbd-a3d6d3efd59a82e930d-6280b21edbaa8579dd1-44afc838b7a22e4b60-d5ecaaea4828e60a3",
+    "IpAddress": "203.88.135.62"
+}
