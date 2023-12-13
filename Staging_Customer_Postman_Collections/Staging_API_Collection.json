@@ -5755,17 +5755,17 @@
 							"script": {
 								"id": "5f8d4829-c15b-4ef3-a6d7-b1543f2d00a3",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has strings\", function () {\r",
+									"pm.test(\"Verify that Status code name is ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Test successMessage\", function () {\r",
+									"pm.test(\"Verify that successMessage returns data retrieve successfully\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.successMessage).to.eql(\"Data retrieve successfully.\");\r",
 									"});\r",
-									"pm.test(\"Your test ResponseCode\", function () {\r",
+									"pm.test(\"Verify that ResponseCode is 200\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 									"});"
@@ -5808,10 +5808,10 @@
 							"script": {
 								"id": "d3264f44-2b84-4695-934c-7102d067a379",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {\r",
+									"pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Status code name has String\", function () {\r",
+									"pm.test(\"Verify that Status code name is Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});\r",
 									""
@@ -5851,13 +5851,13 @@
 							"script": {
 								"id": "73d1f218-606e-468a-9eae-7af8b1137cf5",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {\r",
+									"pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Status code name has String\", function () {\r",
+									"pm.test(\"Verify that Status code name is Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});\r",
-									"pm.test(\"Your test should not be successfull\", function () {\r",
+									"pm.test(\"Verify that isSuccess is false\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
 									"});"
@@ -5900,13 +5900,13 @@
 							"script": {
 								"id": "0d93a22a-7a31-4759-8ceb-94497be365fa",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has String\", function () {\r",
+									"pm.test(\"Verify that Status code name is ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Your test response code\", function () {\r",
+									"pm.test(\"Verify that response code is 200\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 									"});"
