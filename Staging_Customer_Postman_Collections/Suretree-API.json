@@ -4636,7 +4636,7 @@
 			"id": "97f5617e-a329-4c93-add8-7632785e2e7d"
 		},
 		{
-			"name": "Blog Post",
+			"name": "Blog post",
 			"item": [
 				{
 					"name": "Blog Post",
@@ -5183,7 +5183,7 @@
 			"id": "9abe60f3-ead5-4484-b127-2e5702be17dd"
 		},
 		{
-			"name": "Get User Profile",
+			"name": "Get user profile",
 			"item": [
 				{
 					"name": "User profile",
@@ -5339,7 +5339,7 @@
 			"id": "eb71be74-f8ad-49a2-bd83-0577ca30bd48"
 		},
 		{
-			"name": "Credit Score",
+			"name": "Credit score check",
 			"item": [
 				{
 					"name": "Credit score",
@@ -5603,7 +5603,7 @@
 			"id": "6f6da0bf-54a8-44e9-8029-7b4fee4ac205"
 		},
 		{
-			"name": "Credit Score Status",
+			"name": "Credit score status",
 			"item": [
 				{
 					"name": "Credit score status check - successful",
@@ -5745,7 +5745,7 @@
 			"id": "488b95b7-36e6-4bc0-93f4-ee5b2322dedd"
 		},
 		{
-			"name": "View Customers Loan",
+			"name": "View customers loan",
 			"item": [
 				{
 					"name": "view customer loan",
@@ -6092,7 +6092,7 @@
 			"id": "40dcc4c9-4d66-4599-b177-5d305859fbd5"
 		},
 		{
-			"name": "View Customers Saving",
+			"name": "View customers saving",
 			"item": [
 				{
 					"name": "view customer Saving",
@@ -6408,7 +6408,7 @@
 			"id": "ebdddb60-66e4-49c2-b914-ddfb12da3324"
 		},
 		{
-			"name": "Customer Notification",
+			"name": "Customer notification",
 			"item": [
 				{
 					"name": "User Notification",
@@ -6612,7 +6612,7 @@
 			"id": "1266c99d-fb43-4929-8ee5-905c1dc68180"
 		},
 		{
-			"name": "Forgot Password",
+			"name": "Forgot password",
 			"item": [
 				{
 					"name": "Forgot password - Empty Email",
@@ -7280,7 +7280,7 @@
 			"id": "1a203dc6-2455-4e27-9ed7-f571c249fae6"
 		},
 		{
-			"name": "Savings for new user before sign up",
+			"name": "Savings application for new user before sign up",
 			"item": [
 				{
 					"name": "Fixed Deposit",
@@ -8070,20 +8070,20 @@
 									"script": {
 										"id": "e6f29f20-4211-4872-8152-15774f8ea964",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"Verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has OK\", function () {\r",
+											"pm.test(\"Verify that Status code name has OK\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
-											"pm.test(\"Email verification successful\", function () {\r",
+											"pm.test(\"Verify that success message returns Email verification successful\", function () {\r",
 											"    pm.expect(Response.SuccessMessage).to.eql(\"Email verification successful\")\r",
 											"});\r",
-											"pm.test(\"ErrorMessage is null\", function () {\r",
+											"pm.test(\"Verify that ErrorMessage is null\", function () {\r",
 											"    pm.expect(Response.ErrorMessage).to.eql(null)\r",
 											"});\r",
-											"pm.test(\"ResponseCode is 200\", function () {\r",
+											"pm.test(\"Verify that ResponseCode is 200\", function () {\r",
 											"    pm.expect(Response.ResponseCode).to.eql(200)\r",
 											"});"
 										],
@@ -8208,17 +8208,17 @@
 									"script": {
 										"id": "719ad9fe-0ed8-4431-a191-6a8b1f5c3a00",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"Verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Success Message is Saving application saved successfully. \", function () {\r",
+											"pm.test(\"Verify that Success Message response text is Saving application saved successfully. \", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"Data retrieve successfully.\");\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Verify that  Error Message is null\", function () {\r",
+											"pm.test(\"Verify that Error Message is null\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"null\");\r",
 											"});\r",
-											"pm.test(\"Verify ResponseCode  is 200\", function () {\r",
+											"pm.test(\"Verify ResponseCode is 200\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(200);\r",
 											"});"
 										],
@@ -8259,7 +8259,7 @@
 			"id": "e5f27e49-52d6-4dde-878d-61e1777db408"
 		},
 		{
-			"name": "Savings-New User(After Sign Up Copy 2",
+			"name": "Savings application for new user after sign up",
 			"item": [
 				{
 					"name": "Fixed Deposit",
