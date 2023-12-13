@@ -1,0 +1,12 @@
+{
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjlmNDY1MTk0LWQ1ZjYtNGM2Ny1hZDAyLWIzYWQyYmFmMmQ1MyIsIkN1c3RvbWVySWQiOiJjYjdlMjU4ZS0wNDU0LTQwZGItOTZmNi01MjAzZGI3MmE2MDgiLCJVc2VyRnVsbE5hbWUiOiJQaWVycmUgRGFuaWVsIiwiRW1haWwiOiJjZWNpbGUuYm9naXNpY2hAdGFmbWFpbC5jb20iLCJqdGkiOiI2MGEwMmM3Yy1mY2EyLTQ3NzQtODY2Ni0yNWE4NTgxMDdlZDgiLCJQaG9uZU51bWJlciI6IisyMzQ3MDExNzI1Mjk3IiwibmJmIjoxNzAyNDk0ODAyLCJleHAiOjE3MDI0OTYwMDIsImlhdCI6MTcwMjQ5NDgwMn0.gq1Tx3r2fDOuDCbJ_W_m5_hruH3PzeD97-jU0R0Irns",
+    "User-Agent": "PostmanRuntime/7.33.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "86b9dfcd-13d3-45b6-b942-a90b7b2de7ad",
+    "Host": "api.nairacompare.ng",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "8663"
+}
