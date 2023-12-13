@@ -1,0 +1,1 @@
+{"SuccessMessage":"Data saved successfully.","ErrorMessage":null,"ResponseCode":200,"Total":0,"TotalPages":0,"RowsPerPage":0,"PageItemsCount":0,"PageNumber":0,"QueryString":"","List":null,"Details":{"CustomerApplicationId":"7e79ce70-ea6c-4f70-b584-e47bf4969f9c","BusinessLoanGuarantorId":"f2350106-8ecb-4994-9bbd-282285d5ca88","SendEmailToGuarantor":true}}
