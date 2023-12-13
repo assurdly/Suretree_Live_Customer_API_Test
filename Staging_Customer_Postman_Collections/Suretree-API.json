@@ -5949,13 +5949,13 @@
 							"script": {
 								"id": "8502e84e-0705-41c2-81bc-97e6ad556bd6",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has String\", function () {\r",
+									"pm.test(\"Verify that Status code name is bad request\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Your test name\", function () {\r",
+									"pm.test(\"Verify that response message returns Request failed validation\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.message).to.eql(\"Request failed validation\");\r",
 									"});"
@@ -5998,13 +5998,13 @@
 							"script": {
 								"id": "12a900f6-5b9d-431d-943c-ce3476346d64",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has String\", function () {\r",
+									"pm.test(\"Verify that Status code name is ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Your test response code\", function () {\r",
+									"pm.test(\"Verify that response code is 200\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 									"});"
@@ -6047,13 +6047,13 @@
 							"script": {
 								"id": "8faaaac0-1089-4700-aff5-6715f233ae61",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has String\", function () {\r",
+									"pm.test(\"Verify that Status code name is Bad request\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Your test name\", function () {\r",
+									"pm.test(\"Verify that responseCode is 400\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.responseCode).to.eql(400);\r",
 									"});"
