@@ -1,0 +1,1 @@
+{"SuccessMessage":"Registration Successful","ErrorMessage":null,"ResponseCode":200,"Total":0,"TotalPages":0,"RowsPerPage":0,"PageItemsCount":0,"PageNumber":0,"QueryString":"","List":null,"Details":"Nk0b0zPAWrol6BK/WoVatt\u002BAw477gFnr4voUwlUhz81u53BuyYqt\u002B8jauBDqz4iSPKzK7ayCy/rcQGZfZWHcyQ=="}
