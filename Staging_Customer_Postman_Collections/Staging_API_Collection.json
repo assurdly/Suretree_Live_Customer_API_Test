@@ -1003,7 +1003,7 @@
 			"id": "8401e478-7700-4c2a-8651-9638626d1854"
 		},
 		{
-			"name": "View Products",
+			"name": "View products",
 			"item": [
 				{
 					"name": "View all Products",
@@ -1183,18 +1183,18 @@
 							"script": {
 								"id": "1ccbd746-0aff-4677-88d3-b4e2ff997a51",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Your test name\", function () {\r",
+									"pm.test(\"Verify that productTypeName returns null\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.Details.ProductTypeName).to.eql(null);\r",
 									"});\r",
-									"pm.test(\"Your test name\", function () {\r",
+									"pm.test(\"get product id\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.Details.ProductRequirements[0].ProductId).to.eql(pm.environment.get('id'));\r",
 									"});"
