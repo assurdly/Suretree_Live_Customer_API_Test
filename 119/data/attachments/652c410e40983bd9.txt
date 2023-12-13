@@ -1,0 +1,9 @@
+{
+    "FirstName": "Freddie",
+    "LastName": "Mayer",
+    "EmailAddress": "Janie.Runolfsson@tafmail.com",
+    "PhoneNumber": "+2347011725297",
+    "Password": "Assurdly01!",
+    "RetypePassword": "Assurdly01!",
+    "Title": "https://api.nairacompare.ng"
+}
