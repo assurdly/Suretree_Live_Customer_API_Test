@@ -5349,13 +5349,13 @@
 							"script": {
 								"id": "3f883512-5570-46b1-8d62-068f15d66a44",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Your test message\", function () {\r",
+									"pm.test(\"Verify that response message is credit score check was successful\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.message).to.eql(\"Credit score check was successful!\");\r",
 									"});"
