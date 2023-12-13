@@ -12110,7 +12110,7 @@
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.list).to.be.an('array');\r",
 											"});\r",
-											"pm.test(\"CategoryUrl should be Payday loan\", function () {\r",
+											"pm.test(\"verify that CategoryUrl should be sme business loan\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.list[0].categoryUrlSlug).to.eql(\"sme-business-loans\");\r",
 											"});"
