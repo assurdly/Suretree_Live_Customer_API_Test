@@ -8802,14 +8802,14 @@
 									"script": {
 										"id": "c1ce800a-e84b-47d1-a984-01cf147d2236",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Success Message is SEmail verification successful. \", function () {\r",
+											"pm.test(\"verify that Success Message response text is Email verification successful. \", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"Email verification successful\");\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Verify that  Error Message is null\", function () {\r",
+											"pm.test(\"Verify that Error Message is null\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"null\");\r",
 											"});\r",
 											"pm.test(\"Verify ResponseCode  is 200\", function () {\r",
@@ -8848,10 +8848,10 @@
 									"script": {
 										"id": "ac40ac75-1ec9-4e20-8d82-3c3350d00d7d",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has OK\", function () {\r",
+											"pm.test(\"verify that Status code name has OK\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
@@ -9043,17 +9043,17 @@
 									"script": {
 										"id": "3fef236b-9389-499e-8c98-c215eee3b806",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Success Message is Saved successfully. \", function () {\r",
+											"pm.test(\"verify that Success Message is Saved successfully. \", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"Saving application saved successfully.\");\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Verify that  Error Message is null\", function () {\r",
+											"pm.test(\"Verify that Error Message is null\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"null\");\r",
 											"});\r",
-											"pm.test(\"Verify ResponseCode  is 200\", function () {\r",
+											"pm.test(\"Verify ResponseCode is 200\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(200);\r",
 											"});"
 										],
