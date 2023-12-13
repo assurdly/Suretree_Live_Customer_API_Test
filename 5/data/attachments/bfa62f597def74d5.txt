@@ -1,1 +1,0 @@
-{"SuccessMessage":"Registration Successful","ErrorMessage":null,"ResponseCode":200,"Total":0,"TotalPages":0,"RowsPerPage":0,"PageItemsCount":0,"PageNumber":0,"QueryString":"","List":null,"Details":"LD3bzRTBuq8zm5LqgEwEJC5XctrGfv1u2abe37xLXR/hEJ1K2/E3Im/1vu3wh8olwnv/hW59yexAZZfD5C9mlg=="}
