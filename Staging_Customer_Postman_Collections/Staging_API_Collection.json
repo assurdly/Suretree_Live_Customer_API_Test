@@ -9,105 +9,6 @@
 			"name": "Auth",
 			"item": [
 				{
-					"name": "Auth-  successful",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b970f956-c441-4bec-934e-ba476e6ee178",
-								"exec": [
-									"",
-									"pm.test(\"Set signin token value\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.environment.set(\"Auth_token\", jsonData.Details.AuthToken);    ",
-									"});",
-									"pm.test(\"Set signin refresh token value\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    ",
-									"}); ",
-									"pm.test(\"Set signin refresh token value\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.environment.set(\"Customer_Id\", jsonData.Details.AccountDetails.CustomerId);    ",
-									"}); ",
-									"",
-									"tests[\"Http status is 200]\"] = responseCode.code === 200;",
-									"var jsonData = JSON.parse(responseBody);",
-									"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful\";",
-									"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "151f7e1e-a0b1-44c3-9695-b83f21b54d3d",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "f84bed5f-2c7a-4c3b-a8b2-d5c16f3b800f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"Email\": \"ogoogbuanu@gmail.com\",\n    //\"adiberichard12@gmail.com\",\n    \"Password\": \"Suretree@1\",\n    \"UniqueIDFromFrontEnd\": \"e510cc98a302df862f3-0bd058d7bf7643928ae-184d73ba1f45fe8afc8-a36e3ec4f82a81867b-2056f9c8ccb8b4dd2\",\n    \"IpAddress\": \"102.89.47.85\"\n    \n}\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": [
-						{
-							"id": "d564caaf-d39b-4234-9325-fb4d0fabfe6c",
-							"name": "Success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"email\": \"mollit dolor et tempor\",\n  \"password\": \"ea dolore occaecat ad\",\n  \"uniqueIDFromFrontEnd\": \"amet aute laborum nisi\",\n  \"ipAddress\": \"dolore Lorem nulla\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/Auth"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": ""
-						}
-					]
-				},
-				{
 					"name": "Auth - Empty email",
 					"event": [
 						{
@@ -822,11 +723,11 @@
 								"exec": [
 									"var resp = JSON.parse(responseBody)",
 									"",
-									"pm.test(\"Verify that Status code is 200\", function () {",
+									"pm.test(\"Verify that response code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
 									"});",
 									"",
-									"pm.test(\"Verify that Response code is 200\", function () {",
+									"pm.test(\"Verify that status code is 401\", function () {",
 									"    pm.expect(resp.statusCode).to.eql(401);",
 									"});",
 									"",
@@ -913,11 +814,11 @@
 								"exec": [
 									"var resp = JSON.parse(responseBody)",
 									"",
-									"pm.test(\"Status code is 400\", function () {",
+									"pm.test(\"Verify that Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
 									"});",
 									"",
-									"pm.test(\"Test error message\", function () {",
+									"pm.test(\"Verify that error message returns 'the email address field is required\", function () {",
 									"    pm.expect(resp.ErrorMessage).to.eql(\"The EmailAddress field is required.\");",
 									"});",
 									"",
@@ -1000,7 +901,7 @@
 					]
 				},
 				{
-					"name": "Auth-  successful Copy",
+					"name": "Auth-  successful",
 					"event": [
 						{
 							"listen": "test",
@@ -1041,7 +942,7 @@
 							}
 						}
 					],
-					"id": "e5650172-5e04-476a-920f-c97755bf37f0",
+					"id": "f84bed5f-2c7a-4c3b-a8b2-d5c16f3b800f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1056,7 +957,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Email\": \"ogoogbuanu@gmail.com\",\n    //\"adiberichard12@gmail.com\",\n    \"Password\": \"Suretree@1\",\n    \"UniqueIDFromFrontEnd\": \"e510cc98a302df862f3-0bd058d7bf7643928ae-184d73ba1f45fe8afc8-a36e3ec4f82a81867b-2056f9c8ccb8b4dd2\",\n    \"IpAddress\": \"102.89.47.85\"\n}\n",
+							"raw": "{\n    \"Email\": \"ogoogbuanu@gmail.com\",\n    //\"adiberichard12@gmail.com\",\n    \"Password\": \"Suretree@1\",\n    \"UniqueIDFromFrontEnd\": \"e510cc98a302df862f3-0bd058d7bf7643928ae-184d73ba1f45fe8afc8-a36e3ec4f82a81867b-2056f9c8ccb8b4dd2\",\n    \"IpAddress\": \"102.89.47.85\"\n    \n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1067,7 +968,7 @@
 					},
 					"response": [
 						{
-							"id": "4ac59215-cde1-4ea8-87b5-214e046002c0",
+							"id": "d564caaf-d39b-4234-9325-fb4d0fabfe6c",
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
@@ -1112,15 +1013,15 @@
 							"script": {
 								"id": "38850732-2230-411b-afef-5cafb1aa7630",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name has string\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Body is correct\", function () {\r",
+									"pm.test(\"Verify that response Body is correct\", function () {\r",
 									"    pm.response.to.have.body(\"NairaCompare is running\");\r",
 									"});"
 								],
