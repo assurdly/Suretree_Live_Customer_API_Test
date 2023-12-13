@@ -9,95 +9,6 @@
 			"name": "Auth",
 			"item": [
 				{
-					"name": "Auth-  successful",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b970f956-c441-4bec-934e-ba476e6ee178",
-								"exec": [
-									"",
-									"pm.test(\"Set signin token value\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.environment.set(\"Auth_token\", jsonData.Details.AuthToken);    ",
-									"});",
-									"pm.test(\"Set signin refresh token value\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    ",
-									"}); ",
-									"pm.test(\"Set signin refresh token value\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.environment.set(\"Customer_Id\", jsonData.Details.AccountDetails.CustomerId);    ",
-									"}); ",
-									"",
-									"tests[\"HTTP status is 200]\"] = responseCode.code === 200;",
-									"var jsonData = JSON.parse(responseBody);",
-									"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful\";",
-									"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "d5512432-4477-47db-9b9d-3c571a5698ad",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"Email\":\"re@yopmail.com\",// \"kenekizy@yopmail.com\",  //\"{{EmailAddress}}\", \n    \"Password\": \"Suretree@1\",\n    \"UniqueIDFromFrontEnd\": \"56106ab0eff8471d86e-eb25f9e39aaddfd7731-da55d256deeadcad6d9-d9359c24215e12bac2-78b84a319d42d7938\",\n    \"IpAddress\": \"102.89.46.131\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": [
-						{
-							"id": "ee37cb38-93d8-454b-abc6-3d4c3f78554a",
-							"name": "Success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"email\": \"mollit dolor et tempor\",\n  \"password\": \"ea dolore occaecat ad\",\n  \"uniqueIDFromFrontEnd\": \"amet aute laborum nisi\",\n  \"ipAddress\": \"dolore Lorem nulla\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/Auth"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": ""
-						}
-					]
-				},
-				{
 					"name": "Auth - Empty email",
 					"event": [
 						{
@@ -967,7 +878,7 @@
 					]
 				},
 				{
-					"name": "Auth-  successful Copy",
+					"name": "Auth-  successful",
 					"event": [
 						{
 							"listen": "test",
@@ -988,7 +899,7 @@
 									"    pm.environment.set(\"Customer_Id\", jsonData.Details.AccountDetails.CustomerId);    ",
 									"}); ",
 									"",
-									"tests[\"Http status is 200]\"] = responseCode.code === 200;",
+									"tests[\"HTTP status is 200]\"] = responseCode.code === 200;",
 									"var jsonData = JSON.parse(responseBody);",
 									"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful\";",
 									"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;",
@@ -998,7 +909,7 @@
 							}
 						}
 					],
-					"id": "37c56111-4d67-4e94-896b-8ecea20e832b",
+					"id": "d5512432-4477-47db-9b9d-3c571a5698ad",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1024,7 +935,7 @@
 					},
 					"response": [
 						{
-							"id": "f48fdc8f-4975-4d36-868c-cc3365e56c88",
+							"id": "ee37cb38-93d8-454b-abc6-3d4c3f78554a",
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
