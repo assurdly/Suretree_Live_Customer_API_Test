@@ -209,11 +209,11 @@
 								"exec": [
 									"var resp = JSON.parse(responseBody)",
 									"",
-									"pm.test(\"Status code is 400\", function () {",
+									"pm.test(\"Verify that Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
 									"});",
 									"",
-									"pm.test(\"Email is required\", function () {",
+									"pm.test(\"Verify that error message includes invalid account\", function () {",
 									"    pm.expect(resp.ErrorMessage).to.eql(\"Oops, invalid user account.\");",
 									"});",
 									""
