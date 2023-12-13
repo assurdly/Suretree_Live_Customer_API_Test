@@ -1,1 +1,0 @@
-{"isSuccess":true,"message":"OTP sent successfully","data":"ea35cfa6-5e8b-465c-b7f8-8c8a64d0ed4c","errors":[],"statusCode":201}
