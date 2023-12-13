@@ -1276,7 +1276,7 @@
 			"id": "8d34bf37-f69a-4522-a7a4-d5f4f0c1e8a8"
 		},
 		{
-			"name": "Savings for Existing customer",
+			"name": "Savings application for existing customer",
 			"item": [
 				{
 					"name": "Fixed Deposit Savings",
@@ -2857,21 +2857,21 @@
 											"script": {
 												"id": "976bfaa8-c4ae-4a0d-b065-a630cc540d42",
 												"exec": [
-													"pm.test(\"Status code is 201\", function () {\r",
+													"pm.test(\"Verify that Status code is 201\", function () {\r",
 													"    pm.response.to.have.status(201);\r",
 													"});\r",
-													"pm.test(\"Status code name has Created\", function () {\r",
+													"pm.test(\"Verify that Status code name has Created\", function () {\r",
 													"    pm.response.to.have.status(\"Created\");\r",
 													"});\r",
 													"var Response = pm.response.json()\r",
-													"pm.test(\"isSuccess is true\", function () {\r",
+													"pm.test(\"Verify that isSuccess is true\", function () {\r",
 													"    pm.expect(Response.isSuccess).to.eql(true)\r",
 													"});\r",
-													"pm.test(\"Message is Data Saved Successfuly\", function () {\r",
+													"pm.test(\"Verify that Message is Data Saved Successfuly\", function () {\r",
 													"    pm.expect(Response.message).to.eql(\"Data Saved Successfuly\")\r",
 													"});\r",
 													"\r",
-													"pm.test(\"statusCode is 201\", function () {\r",
+													"pm.test(\"Verify that statusCode is 201\", function () {\r",
 													"    pm.expect(Response.statusCode).to.eql(201)\r",
 													"});"
 												],
@@ -2909,13 +2909,13 @@
 			"id": "eef25d6d-5465-4a5f-a548-93ec22d121df"
 		},
 		{
-			"name": "Loans for existing customer",
+			"name": "Loans application for existing customer",
 			"item": [
 				{
 					"name": "Personal Loans",
 					"item": [
 						{
-							"name": "PayDay",
+							"name": "Payday loans",
 							"item": [
 								{
 									"name": "PayDay  Loan - Submit Loan Success",
