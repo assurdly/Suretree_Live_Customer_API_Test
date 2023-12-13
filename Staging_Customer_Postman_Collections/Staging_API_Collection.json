@@ -6717,13 +6717,13 @@
 							"script": {
 								"id": "dddb922e-d835-4b14-9dd5-97e926ccaa2b",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
+									"pm.test(\"Verify that Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is bad request\", function () {\r",
 									"    pm.response.to.have.status(\"Bad Request\");\r",
 									"});\r",
-									"pm.test(\"Your test ErrorMessage\", function () {\r",
+									"pm.test(\"Verify that ErrorMessage returns UniqueIDFromFrontEnd is invalid\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.ErrorMessage).to.eql(\"UniqueIDFromFrontEnd is invalid\");\r",
 									"});"
