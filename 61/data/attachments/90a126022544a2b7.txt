@@ -1,1 +1,0 @@
-{"isSuccess":false,"message":"Failed","data":"BankId is invalid","errors":null,"statusCode":0}
