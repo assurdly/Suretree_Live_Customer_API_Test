@@ -9105,17 +9105,17 @@
 									"script": {
 										"id": "9ab7a4bf-b39c-48df-970b-6f8c9b4e5eff",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Success Message is Saved successfully. \", function () {\r",
+											"pm.test(\"verify that Success Message returns data retrieve successfully\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"Data retrieve successfully.\");\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Verify that  Error Message is null\", function () {\r",
+											"pm.test(\"Verify that Error Message is null\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"null\");\r",
 											"});\r",
-											"pm.test(\"Verify ResponseCode  is 200\", function () {\r",
+											"pm.test(\"Verify ResponseCode is 200\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(200);\r",
 											"});"
 										],
@@ -9126,7 +9126,9 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "23c7dab4-525c-45ee-9d65-d1998e537f8c",
-										"exec": [],
+										"exec": [
+											""
+										],
 										"type": "text/javascript"
 									}
 								}
@@ -9176,20 +9178,20 @@
 											"var JsonData = pm.response.json()\r",
 											"pm.collectionVariables.set(\"NewCustomerId\" , JsonData.Details.AccountDetails.CustomerId )*/\r",
 											"\r",
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has OK\", function () {\r",
+											"pm.test(\"verify that Status code name has OK\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
-											"pm.test(\"SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns registration successful\", function () {\r",
 											"    pm.expect(Response.SuccessMessage).to.eql(\"Registration Successful\")\r",
 											"});\r",
-											"pm.test(\"ErrorMessage is null\", function () {\r",
+											"pm.test(\"verify that ErrorMessage is null\", function () {\r",
 											"    pm.expect(Response.ErrorMessage).to.eql(null)\r",
 											"});\r",
-											"pm.test(\"ResponseCode is 200\", function () {\r",
+											"pm.test(\"verify that ResponseCode is 200\", function () {\r",
 											"    pm.expect(Response.ResponseCode).to.eql(200)\r",
 											"});"
 										],
@@ -9255,20 +9257,20 @@
 									"script": {
 										"id": "7bd76624-f718-4958-bbc4-c4ea2c7de67f",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
+											"pm.test(\"Status code name is ok\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"   \r",
-											"pm.test(\"SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns email verification successful\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"Email verification successful\");\r",
 											"});\r",
-											"pm.test(\"ErrorMessage\", function () {\r",
+											"pm.test(\"verify that ErrorMessage is null\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(null);\r",
 											"});\r",
-											"pm.test(\"ResponseCode\", function () {\r",
+											"pm.test(\"verify that ResponseCode is 200\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(200);\r",
 											"});"
 										],
