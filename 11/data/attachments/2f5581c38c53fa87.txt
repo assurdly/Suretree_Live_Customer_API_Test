@@ -1,1 +1,0 @@
-{"SuccessMessage":"Registration Successful","ErrorMessage":null,"ResponseCode":200,"Total":0,"TotalPages":0,"RowsPerPage":0,"PageItemsCount":0,"PageNumber":0,"QueryString":"","List":null,"Details":"TExk/dmc6b1QR8VDNCZ0e6XKVRVC9E77gq2SuioUN5XpBIhhakjIZxEY9GgG3wCGrHVakky6HT2FwiDg7q2jbA=="}
