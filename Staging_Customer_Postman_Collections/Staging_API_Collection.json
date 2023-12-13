@@ -6102,17 +6102,17 @@
 							"script": {
 								"id": "b7a843c8-3c09-4c2f-9784-0e31326ec0e1",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Success Message is Data retrieve successfully.\", function () {\r",
+									"pm.test(\"Verify that response text includes Data retrieve successfully.\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"Data retrieve successfully.\");\r",
 									"});\r",
-									"pm.test(\"Your responseCode is 200\", function () {\r",
+									"pm.test(\"Verify that Your responseCode is 200\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 									"});\r",
@@ -6156,10 +6156,10 @@
 							"script": {
 								"id": "b7a843c8-3c09-4c2f-9784-0e31326ec0e1",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {\r",
+									"pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});\r",
 									"\r",
@@ -6203,10 +6203,10 @@
 							"script": {
 								"id": "b7a843c8-3c09-4c2f-9784-0e31326ec0e1",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {\r",
+									"pm.test(\"Verify that Status code is 401\", function () {\r",
 									"    pm.response.to.have.status(401);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"Verify that Status code name is Unauthorized\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});\r",
 									""
