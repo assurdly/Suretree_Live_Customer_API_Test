@@ -1,0 +1,183 @@
+{
+    "Customer": {
+        "CampaignId": "",
+        "EmailAddress": "jakob.feeney@tafmail.com",
+        "CurrentSalary": "100,0000",
+        "IncomeInfoList": [],
+        "ExpenditureInfoList": [],
+        "Designation": {
+            "DesignationId": "2b4cc3ee-2e51-4603-969c-1a86e71a3a14",
+            "DesignationName": "Carpenter"
+        },
+        "CreditScore": 0,
+        "IsLoanApplicationAccountSetup": false,
+        "LastCreditScoreReportId": "",
+        "CustomerId": "d2d2fde8-f768-4247-99cb-5d58ea13edd4",
+        "FirstName": "Adela",
+        "LastName": "Ebert",
+        "MiddleName": null,
+        "PhoneNumber": "+2347011725297",
+        "HasBVN": true,
+        "BVNVerified": true,
+        "Gender": "female",
+        "LoanAmount": "10000",
+        "LoanDuration": "6",
+        "StateId": "075ed228-38bf-4ef5-a377-9909a683ea84",
+        "LocalGovernmentAreaId": "E8584794-0B21-4080-B1DB-9569408579EF",
+        "AddressLine1": "11 Test Strt",
+        "Dob": "2023-12-13T00:00:00",
+        "StateOfResidenceText": " Lagos ",
+        "LocalGovernmentOfResidenceText": " Alimosho ",
+        "BankAccountName": "Adibe Richard",
+        "BankAccountNumber": "0248219856",
+        "Occupation": "Tester",
+        "CurrentEmployerName": "Assurdly Ltd",
+        "TotalMonthlyIncome": 1000000,
+        "TotalMonthlyExpenses": "50,0000",
+        "EmploymentStatus": {
+            "EmploymentStatusId": "382DF795-6D78-4AE1-B3DB-E338967C47CF",
+            "EmploymentStatusTitle": "Others",
+            "EmploymentStatusView": null,
+            "DateCreated": "2023-03-16T00:00:00",
+            "GroupName": "FixedDeposit",
+            "BusinessLoanGuarantors": [],
+            "CustomerEmploymentDetails": [],
+            "CustomerEmploymentHistories": [],
+            "CustomerLoanApplicationRequests": []
+        },
+        "BankCode": "058",
+        "BankName": "Guaranty Trust Bank"
+    },
+    "Product": {
+        "ProductTypeName": null,
+        "ProductRequirements": [
+            {
+                "ProductId": "b74cd375-4c7f-484a-bcea-7384d46a1d8d",
+                "RequirementId": "S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT",
+                "RequirementTitle": "International Passport",
+                "RequirementDescription": "This is your valid international passport",
+                "ProductRequirementId": "058caddf-943e-4648-8458-9cd17b2a0dfe",
+                "ProductName": "Realty Quick Loans"
+            },
+            {
+                "ProductId": "b74cd375-4c7f-484a-bcea-7384d46a1d8d",
+                "RequirementId": "ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519",
+                "RequirementTitle": "National Identification Card",
+                "RequirementDescription": "&lt;p&gt;This is you identity card indicating that you&lt;br&gt;&lt;span style=&quot;font-size: 0.875rem;&quot;&gt;are a citizen of nigeria&lt;/span&gt;&lt;/p&gt;",
+                "ProductRequirementId": "9e8cbcdf-c025-4cb5-b001-36339378385d",
+                "ProductName": "Realty Quick Loans"
+            }
+        ],
+        "ProductCategories": [
+            {
+                "ProductId": "b74cd375-4c7f-484a-bcea-7384d46a1d8d",
+                "ProductName": "Realty Quick Loans",
+                "ProductCategoryId": "44e56af0-3125-4f8f-a38c-0b16091acf4b",
+                "CategoryId": "082d28f7-0f23-4336-9bf8-2508a2674d02",
+                "CategoryName": "Quick Loans",
+                "CategoryDescription": "Get same day payment when you apply for quick loans online from select providers in Nigeria.",
+                "CategoryUrlSlug": "quick-loans"
+            }
+        ],
+        "ProductImages": [
+            {
+                "ProductId": "b74cd375-4c7f-484a-bcea-7384d46a1d8d",
+                "ProductName": "Realty Quick Loans",
+                "ProductDescription": "Test Quick Product",
+                "FileSystemId": "ec8c5432-d696-4253-b87a-6bc9df6e621b",
+                "FileSystemType": null,
+                "FileSystemExtension": null,
+                "FileSystemSize": null,
+                "FileSystemName": null,
+                "FileSystemOwnerId": null,
+                "FileSystemSlug": null,
+                "DateCreated": null
+            }
+        ],
+        "ProductId": "b74cd375-4c7f-484a-bcea-7384d46a1d8d",
+        "ProductDescription": "Test Quick Product",
+        "DateCreated": "2023-06-02T20:09:05.127",
+        "DateLastModified": "AAAAAAABQp4=",
+        "ProviderId": "f2158613-d3ab-47e1-9246-c40fd5b2ae42",
+        "ProviderName": "Realty Invest Network Solution limited",
+        "ProviderDescription": "&lt;p&gt;At &lt;a href=&quot;https://nairacompare.ng/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Realty Invest Network Solutions Limited&lt;/a&gt;, we offer quality real estate services that deploys Co-ownership and joint venture models to enable venturers connect to consistent and trustworthy contributions in our real estate development projects.&lt;/p&gt;",
+        "ProviderEmail": "sultan.ajayi@suretree.com",
+        "ProviderAddress": "121 Amadu Bello Way VI Lagos",
+        "ProviderPhone": "+2347036884558",
+        "ProviderWebsite": "nairacompare.ng",
+        "ProductName": "Realty Quick Loans",
+        "ProductLoanId": "16884923-c45b-4222-944f-4dd31a2c7ef4",
+        "MaxDuration": 12,
+        "MinDuration": 6,
+        "Rate": 2,
+        "MaxAmount": 500000,
+        "MinAmount": 10000,
+        "MaxAge": 65,
+        "MinAge": 18,
+        "IsAnnualRateType": true,
+        "IsFixedRepayment": true,
+        "IsPublished": false,
+        "ProviderProductPageUrl": "https://realtyinvest.ng/realty-quick-loans/",
+        "ClassOfBusinessId": "2dfce049-93fe-4bc1-a46d-c55de7738d1b",
+        "ClassOfBusinessTitle": null,
+        "ClassOfBusinessDescription": null,
+        "FileSystemId": "ec8c5432-d696-4253-b87a-6bc9df6e621b",
+        "ProductSeoMetaTagTitle": "Realty Invest Network Solution limited - Realty Quick Loans",
+        "ProductSeoMetaTagUrlSlug": "realty-invest-network-solution-limited-realty-quick-loans",
+        "ProductSeoMetaTagDescription": "test quick product",
+        "ProductSeoMetaTagKeywords": null,
+        "ProviderSeoMetaTagTitle": "Realty Invest Network Solution limited",
+        "ProviderSeoMetaTagUrlSlug": "realty-invest-network-solution-limited",
+        "ProviderSeoMetaTagDescription": "at realty invest network solutions limited, we offer quality real estate services that deploys co-ownership and joint venture models to enable venturers connect to consistent and trustworthy contributions in our real estate development projects.",
+        "ProviderSeoMetaTagKeywords": "",
+        "ProviderFileSystemId": "35825ed8-e3f0-4297-a4b1-85ee03aad0eb",
+        "IsProviderPublished": true,
+        "IsProviderBlacklisted": false,
+        "AverageCustomerRating": null,
+        "ProcessingTime": null,
+        "ProviderAddressMap": null,
+        "NumberOfIncomeEarned": 100000,
+        "NumberOfExpenditureIncurred": 50000,
+        "ContentId": null,
+        "ContentTitle": null,
+        "ContentDescription": null,
+        "ContentBody": null,
+        "CommissionValue": 1.5,
+        "IsRate": true,
+        "CanTakeApplications": true,
+        "ProviderCanTakeApplications": true,
+        "ApplicationSignatureType": "Confirmation Checkbox",
+        "ApplicationType": "onsite",
+        "ManagementFee": null
+    },
+    "SupportingDocuments": [
+        {
+            "RequirementId": "S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT",
+            "RequirementTitle": "International Passport",
+            "FileSystemId": "a4206cf1-5f24-4d17-8409-875c7b209e20",
+            "FileName": "7Cs-of-communication-1.png",
+            "CustomerApplicationId": "",
+            "IsUploaded": true,
+            "FileSystemName": "7Cs-of-communication-1.png"
+        },
+        {
+            "RequirementId": "ZC4G9-WJ0BA-00M7E-40CR4-P917M-M5519",
+            "RequirementTitle": "National Identification Card",
+            "FileSystemId": "5c4190e5-de0d-48df-94a4-a0f12f09b15e",
+            "FileName": "7Cs-of-communication-1.png",
+            "CustomerApplicationId": "",
+            "IsUploaded": true,
+            "FileSystemName": "7Cs-of-communication-1.png"
+        }
+    ],
+    "ErrorLog": {
+        "CreditScore": {
+            "IsError": false,
+            "ErrorMessage": ""
+        }
+    },
+    "SavedApplicationId": "",
+    "CustomerDescription": "",
+    "additionaFields": {},
+    "SelectedCategory": "082d28f7-0f23-4336-9bf8-2508a2674d02"
+}
