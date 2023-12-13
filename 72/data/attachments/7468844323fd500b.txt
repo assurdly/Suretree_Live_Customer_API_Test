@@ -1,0 +1,1 @@
+{"SuccessMessage":"Registration Successful","ErrorMessage":null,"ResponseCode":200,"Total":0,"TotalPages":0,"RowsPerPage":0,"PageItemsCount":0,"PageNumber":0,"QueryString":"","List":null,"Details":"TRUhdihDA\u002B9\u002B\u002BbNJmC115RudD/xF7IIx2QsUZZgYknJkG\u002BIQJ4etgO0Ej2xB658bRwmfkW8FeVx5VKhSYpWKdQ=="}
