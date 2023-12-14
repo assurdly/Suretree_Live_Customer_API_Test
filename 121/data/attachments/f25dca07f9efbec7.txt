@@ -1,5 +1,0 @@
-{
-    "Email": "Kariane.Ziemann@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "5mWoFfhOET5vCy2ia6B1jrxShvwHl4QOQJ1dwrz+xAiICaLMxynHtBI2GhlIRBJP5G0x12Bv71OOqc2Ok/42jA=="
-}
