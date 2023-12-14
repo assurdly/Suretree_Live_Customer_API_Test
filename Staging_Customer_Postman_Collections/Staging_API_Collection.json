@@ -12606,10 +12606,10 @@
 									"script": {
 										"id": "ac40ac75-1ec9-4e20-8d82-3c3350d00d7d",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has OK\", function () {\r",
+											"pm.test(\"verify that Status code name has OK\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
@@ -12811,10 +12811,10 @@
 									"script": {
 										"id": "e7514ed9-706d-4919-bb3f-7d5c4c29769f",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that Your test SuccessMessage\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Successfully created\");\r",
 											"});"
@@ -12857,22 +12857,22 @@
 									"script": {
 										"id": "091d0763-d230-4adb-b176-8acbc8bc8743",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test successMessage\", function () {\r",
+											"pm.test(\"verify that successMessage returns Data retrieve successfully\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.successMessage).to.eql(\"Data retrieve successfully.\");\r",
 											"});\r",
-											"pm.test(\"Your test responseCode\", function () {\r",
+											"pm.test(\"verify that responseCode is 200\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"verify that list is an array\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.list).to.be.an('array');\r",
 											"});\r",
-											"pm.test(\"CategoryUrl should be Payday loan\", function () {\r",
+											"pm.test(\"verify that CategoryUrl should be sole trader business loan\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.list[0].categoryUrlSlug).to.eql(\"sole-trader-business-loans\");\r",
 											"});"
