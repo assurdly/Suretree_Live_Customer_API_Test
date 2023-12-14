@@ -11576,10 +11576,10 @@
 									"script": {
 										"id": "b32ca235-71ad-472c-8f5f-bd2d9d224c85",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns successfully created\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Successfully created\");\r",
 											"});"
@@ -11616,10 +11616,10 @@
 									"script": {
 										"id": "8f135c68-1ef0-4625-bd16-d0e88de9c009",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test successMessage\", function () {\r",
+											"pm.test(\"verify that successMessage equals data retrieve successfully\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.successMessage).to.eql(\"Data retrieve successfully.\");\r",
 											"});"
@@ -11673,11 +11673,11 @@
 											"var JsonData = pm.response.json()\r",
 											"pm.collectionVariables.set(\"NewCustomerIdAfterSignUp\" , JsonData.Details.AccountDetails.CustomerId )*/\r",
 											"\r",
-											"pm.test(\"EmailAddAfterSignUp\", ()=> {\r",
+											"pm.test(\"set EmailAddress\", ()=> {\r",
 											"    const RequestData = JSON.parse(pm.request.body.raw)\r",
 											"    pm.collectionVariables.set(\"NewEmailAddAfterSignUp\", RequestData.EmailAddress);\r",
 											"})\r",
-											"pm.test('Customer', ()=> {\r",
+											"pm.test('set concurrencyStamp', ()=> {\r",
 											"    JsonData = pm.response.json();\r",
 											"    pm.collectionVariables.set(\"concurrencyStampAfterSignUp\", JsonData.Details);\r",
 											"})"
@@ -11724,10 +11724,10 @@
 									"script": {
 										"id": "4880964a-45fa-4b53-9bf0-a8e8bd7abdf0",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns Email verification successful\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Email verification successful\");\r",
 											"});"
@@ -11764,10 +11764,10 @@
 									"script": {
 										"id": "ac40ac75-1ec9-4e20-8d82-3c3350d00d7d",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has OK\", function () {\r",
+											"pm.test(\"verify that Status code name has OK\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
