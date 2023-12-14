@@ -12379,10 +12379,10 @@
 									"script": {
 										"id": "d699b77c-89b7-40a0-8ffc-95737c08664d",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns Data saved successfully\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Data saved successfully.\");\r",
 											"});"
@@ -12425,22 +12425,22 @@
 									"script": {
 										"id": "607084f5-0ad1-4a80-9c14-bdb94acb32c3",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test successMessage\", function () {\r",
+											"pm.test(\"verify that successMessage returns data retrieve successfully\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.successMessage).to.eql(\"Data retrieve successfully.\");\r",
 											"});\r",
-											"pm.test(\"Your test responseCode\", function () {\r",
+											"pm.test(\"verify that responseCode is 200\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 											"});\r",
-											"pm.test(\"Your test name\", function () {\r",
+											"pm.test(\"verify that list is an array\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.list).to.be.an('array');\r",
 											"});\r",
-											"pm.test(\"CategoryUrl should be Payday loan\", function () {\r",
+											"pm.test(\"CategoryUrl should be sme business loan\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.list[0].categoryUrlSlug).to.eql(\"sme-business-loans\");\r",
 											"});"
@@ -12496,10 +12496,10 @@
 											"var jsonData = pm.response.json();\r",
 											"pm.environment.set('ConcurrencyStamp', jsonData.Details);\r",
 											"\r",
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns Registration successful\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Registration Successful\");\r",
 											"});"
@@ -12566,10 +12566,10 @@
 									"script": {
 										"id": "9532e0f5-11d4-4f02-9468-b939b334e127",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage equals Email verification successful\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Email verification successful\");\r",
 											"});"
