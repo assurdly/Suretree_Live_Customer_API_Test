@@ -1,0 +1,13 @@
+{
+    "Transfer-Encoding": "chunked",
+    "Content-Type": "text/plain; charset=utf-8",
+    "Content-Encoding": "gzip",
+    "Vary": "Accept-Encoding",
+    "Server": "Microsoft-IIS/10.0",
+    "Strict-Transport-Security": "max-age=2592000",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "origin-when-cross-origin",
+    "Permissions-Policy": "autoplay=(self), camera=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), microphone=(self)",
+    "Date": "Thu, 14 Dec 2023 06:32:09 GMT"
+}
