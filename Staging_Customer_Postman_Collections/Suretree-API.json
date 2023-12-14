@@ -11970,10 +11970,10 @@
 									"script": {
 										"id": "cb9fd587-9776-4a65-a5d5-24a9507f9493",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that successMessage returns successfully created\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Successfully created\");\r",
 											"});"
@@ -12010,10 +12010,10 @@
 									"script": {
 										"id": "a0255463-5e6e-42aa-97a5-db56a237b942",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test successMessage\", function () {\r",
+											"pm.test(\"verify that successMessage returns data retrieve successfully\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.successMessage).to.eql(\"Data retrieve successfully.\");\r",
 											"});"
@@ -12075,10 +12075,10 @@
 											"var jsonData = pm.response.json();\r",
 											"pm.environment.set('ConcurrencyStamp', jsonData.Details);\r",
 											"\r",
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns Registration successful\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Registration Successful\");\r",
 											"});"
@@ -12145,10 +12145,10 @@
 									"script": {
 										"id": "9532e0f5-11d4-4f02-9468-b939b334e127",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns Email verification successful\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Email verification successful\");\r",
 											"});"
@@ -12185,10 +12185,10 @@
 									"script": {
 										"id": "ac40ac75-1ec9-4e20-8d82-3c3350d00d7d",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has OK\", function () {\r",
+											"pm.test(\"verify that Status code name has OK\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
