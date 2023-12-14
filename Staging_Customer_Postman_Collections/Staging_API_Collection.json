@@ -10559,14 +10559,14 @@
 									"script": {
 										"id": "96c3de92-dfbd-4627-9ab9-f5b878aabce5",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage equals successfully created\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Successfully created\");\r",
 											"});\r",
-											"pm.test(\"Your test ResponseCode\", function () {\r",
+											"pm.test(\"verify that ResponseCode is 200\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.ResponseCode).to.eql(200);\r",
 											"});"
@@ -10603,18 +10603,18 @@
 									"script": {
 										"id": "8af6b603-a39d-48b5-b4de-3405789f770b",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test SuccessMessage\", function () {\r",
+											"pm.test(\"verify that SuccessMessage returns email verification\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.SuccessMessage).to.eql(\"Email verification successful\");\r",
 											"});\r",
-											"pm.test(\"Your test ResponseCode\", function () {\r",
+											"pm.test(\"verify that ResponseCode is 200\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.ResponseCode).to.eql(200);\r",
 											"});\r",
-											"pm.test(\"Your test ConcurrencyStamp \", function () {\r",
+											"pm.test(\"set ConcurrencyStamp \", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.collectionVariables.set('ConcurrencyStampB4SignUp', jsonData.Details)\r",
 											"});"
@@ -10651,10 +10651,10 @@
 									"script": {
 										"id": "ac40ac75-1ec9-4e20-8d82-3c3350d00d7d",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Status code name has OK\", function () {\r",
+											"pm.test(\"verify that Status code name has OK\", function () {\r",
 											"    pm.response.to.have.status(\"OK\");\r",
 											"});\r",
 											"var Response = pm.response.json()\r",
@@ -10822,10 +10822,10 @@
 									"script": {
 										"id": "2eb2ede6-3e04-4fba-b3e5-7179de8d728f",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.test(\"verify that Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Your test successMessage\", function () {\r",
+											"pm.test(\"verify that successMessage equals data retrieve successfully\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.successMessage).to.eql(\"Data retrieve successfully.\");\r",
 											"});"
@@ -10885,11 +10885,11 @@
 											"var JsonData = pm.response.json()\r",
 											"pm.collectionVariables.set(\"NewCustomerIdAfterSignUp\" , JsonData.Details.AccountDetails.CustomerId )*/\r",
 											"\r",
-											"pm.test(\"EmailAddAfterSignUp\", ()=> {\r",
+											"pm.test(\"set EmailAddress\", ()=> {\r",
 											"    const RequestData = JSON.parse(pm.request.body.raw)\r",
 											"    pm.collectionVariables.set(\"NewEmailAddAfterSignUp\", RequestData.EmailAddress);\r",
 											"})\r",
-											"pm.test('Customer', ()=> {\r",
+											"pm.test('set concurrencyStamp', ()=> {\r",
 											"    JsonData = pm.response.json();\r",
 											"    pm.collectionVariables.set(\"concurrencyStampAfterSignUp\", JsonData.Details);\r",
 											"})"
