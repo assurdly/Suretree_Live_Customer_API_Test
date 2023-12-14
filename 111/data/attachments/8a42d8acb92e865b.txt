@@ -1,9 +1,0 @@
-{
-    "FirstName": "Laverna",
-    "LastName": "Prosacco",
-    "EmailAddress": "Diamond.Champlin@tafmail.com",
-    "PhoneNumber": "+2347011725297",
-    "Password": "Assurdly01!",
-    "RetypePassword": "Assurdly01!",
-    "Title": "https://qa.nairacompare.ng"
-}
