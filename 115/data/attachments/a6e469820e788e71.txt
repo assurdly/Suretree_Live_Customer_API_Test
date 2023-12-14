@@ -1,5 +1,0 @@
-{
-    "Email": "Izabella.Hagenes@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "96UX3L66DxfvBcp2/i3awicpqP+sF6nsq45jkVq6HumzeUB/K/2xmJF7xMBIlraiM96Fe4otgXnFJvHN1Iw1fQ=="
-}
