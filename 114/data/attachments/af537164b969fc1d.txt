@@ -1,5 +1,0 @@
-{
-    "Email": "Zoila.Lindgren@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "nkTnI8fh+0iOlTxg4V4GkuhRpdhp5mKu53uYf8YsjhoPJVJwC5mtoUSB30I04f+5BH+2z4fcxbPv8Aq8dhqGpg=="
-}
