@@ -1,5 +1,0 @@
-{
-    "Email": "Kyla.Ebert@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "Iitc/5PRqNdliHateTB6af4Tv2yLawn7ip76rBEsqAo3g9BhK0+oKBoadaTm//uZqnxH/KP9vm1TEA70KmnD+w=="
-}

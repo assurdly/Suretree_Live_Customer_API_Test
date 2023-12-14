@@ -1,0 +1,17 @@
+{
+    "FirstName": "Keon",
+    "LastName": "Murazik",
+    "EmailAddress": "Garrett.McClure@tafmail.com",
+    "PhoneNumber": "+2347011725297",
+    "Password": "Assurdly01!",
+    "RetypePassword": "Assurdly01!",
+    "Title": "https://qa.nairacompare.ng"
+}
+
+
+
+
+
+
+
+

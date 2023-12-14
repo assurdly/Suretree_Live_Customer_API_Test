@@ -1,0 +1,47 @@
+{
+    "personalDetails": {
+        "title": "Mr",
+        "firstName": "Ibukunoluwa",
+        "middleName": "Joseph",
+        "lastName": "Dada",
+        "emailAddress": "hello@yopmail.com",
+        "phoneNumber": "+2349038828165",
+        "maritalStatusId": 134,
+        "gender": "male",
+        "dob": "2002-11-08T23:00:00.000Z",
+        "passportPictureFileSystemId": "a9790487-54b6-4293-8716-b618cabd0daf",
+        "personalDetailIdtype": 14,
+        "personalDetailIdtypeFileSystemId": "3a955a68-bbca-45b9-ac13-9176903b5427"
+    },
+    "homeAddressDetails": {
+        "areYouNigerian": true,
+        "nigerianAddressAddress1": "Monaque Ave. Independent Layout Enugu",
+        "nigerianAddressAddress2": "Monaque Ave. Independent Layout Enugu",
+        "nigerianAddressCountryOfResidenceId": "46909ea8-06cf-47a9-9cd5-dc8b169ed067",
+        "nigerianAddressState": "075ed228-38bf-4ef5-a377-9909a683ea82",
+        "nigerianAddressLga": "448D663C-2DF4-4450-9B5B-A9A2760BC857",
+        "nigerianAddressTownCity": "Oji River",
+        "nigerianAddressProofOfAddressFileSystemId": "3da7f8cd-6817-49a4-9935-2815e81c565e",
+        "ecowasregionAddress1": "",
+        "ecowasregionAddress2": "",
+        "ecowasregionCountryOfResidenceId": null,
+        "ecowasregionState": null,
+        "ecowasregionLga": null,
+        "ecowasregionTownCity": "",
+        "ecowasregionBiodataFileSystemId": "",
+        "ecowasregionProofOfAddressFileSystemId": "",
+        "ecowasregionWorkPermitBiodataSystemId": ""
+    },
+    "bankAccountDetails": {
+        "customerVerificationNumber": "22538816966",
+        "accountNumber": "0521122761",
+        "bankId": "42B1CA2A-2CAD-429D-87E5-67146A980F2F",
+        "accountName": "Ibukunoluwa Joseph Dada"
+    },
+    "additionaFields": {},
+    "depositAmount": "1000",
+    "durationOfSavings": "6",
+    "productId": "8d762146-b3f6-4f43-9879-7c335bc39747",
+    "categoryId": "4d6e702c-7654-4e9a-b8b9-2b44cabf6476",
+    "userConsent": true
+}
