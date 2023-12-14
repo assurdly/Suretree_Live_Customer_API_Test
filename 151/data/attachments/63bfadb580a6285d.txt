@@ -1,0 +1,64 @@
+
+{
+    "application": {
+        "ProductId": "aadaa410-06b9-43f7-b7a9-f44d4c26ac85",
+        "CategoryId": "facda526-7d87-4529-a67b-0ca06fdea38d",
+        "Amount": "369",
+        "Duration": 3,
+        "CampaignId": "",
+        "SavedApplicationId": "2f60b01e-3b37-4525-a652-77cff1911b3b"
+    },
+    "bankDetails": {
+        "customerVerificationNumber": "22152216322",
+        "sameAsFundSourceAccount": true,
+        "fundSourceAccountId": {
+            "bankAccountNumber": "0773355268",
+            "bankId": "dd41af1a-d8fc-4db7-a45b-1d7665fddc30",
+            "bankCode": "044",
+            "bankAccountName": "Priscaline Uzor ",
+            "sourceOfFunds": 139
+        },
+        "incomingFundSourceAccountId": null
+    },
+    "nextOfKin": {
+        "firstName": "ghhjjjj",
+        "lastName": "hggffff",
+        "emailAddress": "fgfghhhh@gmail.com",
+        "phoneNumber": "+2348077665544",
+        "relationship": 151,
+        "otherRelationship": null
+    },
+    "personalDetail": {
+        "title": "Miss",
+        "firstName": "Priscaline",
+        "middleName": "Chigozirim",
+        "lastName": "Uzor",
+        "emailAddress": "priscaline@assurdly.com",
+        "phoneNumber": "+2347086490512",
+        "maritalStatusId": 163,
+        "gender": "female",
+        "dob": "1995-05-07T23:00:00.000Z",
+        "isCloseRelativesPep": false,
+        "pepDetails": null,
+        "passportPictureFileSystemId": "4550306c-b741-4724-83ee-e98e3f3f95ff",
+        "personalDetailIdtype": 13,
+        "personalDetailIdtypeFileSystemId": "fa10adce-24ef-4be7-bab5-6a7a2ffd506c",
+        "relationshipWithChild": null,
+        "isSubscribedToNewsLetter": false,
+        "registerUserOtpId": "37324788-c838-4fea-82ed-70502f02e3eb"
+    },
+    "residentialDetails": {
+        "areYouNigerian": true,
+        "addressLine1": "8 Power line Street, Off Akilo, Lagos",
+        "addressLine2": null,
+        "stateId": "075ed228-38bf-4ef5-a377-9909a683ea76",
+        "lgaId": "42FEAD9E-5BB2-4645-9DC9-BED10B9EA0A4",
+        "townCity": "Lagos",
+        "proofOfAddressFileSystemId": "467f14cb-562a-4742-bcca-aaecaeff3ab9",
+        "areYouEcowasregion": null,
+        "ecowasregionBiodataFileSystemId": null,
+        "ecowasregionWorkPermitBiodataSystemId": null,
+        "countryOfResidenceId": "46909ea8-06cf-47a9-9cd5-dc8b169ed067"
+    },
+    "additionalFields": {}
+}
