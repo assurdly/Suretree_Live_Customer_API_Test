@@ -13366,10 +13366,10 @@
 							"script": {
 								"id": "c98fea6a-d14b-4b87-a72a-d0c434a42bd0",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"verify that Status code name has OK\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});"
 								],
@@ -13419,14 +13419,14 @@
 							"script": {
 								"id": "082468cf-d0a8-4c80-9f75-6144b0b3d3df",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Your test is successful\", function () {\r",
+									"pm.test(\"verify that isSuccess is true\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
 									"});\r",
-									"pm.test(\"Your test should have following properties\", function () {\r",
+									"pm.test(\"verify that data have following properties\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.data).to.haveOwnProperty(\"customerId\");\r",
 									"    pm.expect(jsonData.data).to.haveOwnProperty(\"firstName\");\r",
@@ -13471,18 +13471,18 @@
 							"script": {
 								"id": "5fc807b7-8233-403b-a5ce-3fb125bbdc12",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Status code name has string\", function () {\r",
+									"pm.test(\"verify that Status code name has Ok\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Your test message\", function () {\r",
+									"pm.test(\"verify that message returns Success\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
 									"});\r",
-									"pm.test(\"Your test isSuccess\", function () {\r",
+									"pm.test(\"verify that isSuccess is true\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
 									"});\r",
