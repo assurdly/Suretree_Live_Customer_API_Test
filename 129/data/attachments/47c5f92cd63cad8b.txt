@@ -1,5 +1,0 @@
-{
-    "Email": "",
-    "Password": "Funded1!",
-    "RetypePassword": "Funded1!"
-}
