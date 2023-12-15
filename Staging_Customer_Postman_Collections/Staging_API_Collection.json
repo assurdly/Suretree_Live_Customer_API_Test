@@ -714,6 +714,97 @@
 					]
 				},
 				{
+					"name": "Refresh auth (No authoriztion",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "365f29f8-1131-496b-8c1b-539484b68d2d",
+								"exec": [
+									"pm.test(\"Verify that Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"",
+									"pm.test(\"Verify that response message returns Unauthorized\", function () {",
+									"    pm.expect(pm.response.text()).to.eql(\"Unauthorized\");",
+									"});",
+									"pm.test(\"Verify that statusCode is 401\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.eql(null);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "bfc3cf93-0483-4422-93e2-2374d298f5aa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"AuthToken\": \"{{Auth_token}}\",\n    \"RefreshToken\": \"{{Refresh_token}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/Auth/refresh-token"
+					},
+					"response": [
+						{
+							"id": "c8e4fae0-9961-4664-8fdf-1452b3d97920",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"authToken\": \"laborum in\",\n  \"refreshToken\": \"dolor\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth/refresh-token"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				},
+				{
 					"name": "Update Auth Token Invalid",
 					"event": [
 						{
