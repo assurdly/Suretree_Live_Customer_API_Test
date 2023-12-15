@@ -1,0 +1,11 @@
+{
+    "Transfer-Encoding": "chunked",
+    "Server": "Microsoft-IIS/10.0",
+    "Strict-Transport-Security": "max-age=2592000",
+    "WWW-Authenticate": "Bearer",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "origin-when-cross-origin",
+    "Permissions-Policy": "autoplay=(self), camera=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), microphone=(self)",
+    "Date": "Fri, 15 Dec 2023 11:05:38 GMT"
+}
