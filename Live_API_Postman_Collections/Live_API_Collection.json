@@ -4123,12 +4123,12 @@
 											"script": {
 												"id": "3d0b8d65-4009-486a-86e8-a295a35194b1",
 												"exec": [
-													"var Request = JSON.parse(pm.request.body.raw)\r",
+													"/*var Request = JSON.parse(pm.request.body.raw)\r",
 													"var Firstname = Request.Customer.FirstName\r",
 													"var Lastname = Request.Customer.LastName\r",
 													"var Name = Firstname + \" \" + Lastname\r",
 													"var ProductName = Request.Product.ProductName\r",
-													"console.log(Name, ProductName)\r",
+													"console.log(Name, ProductName)*/\r",
 													"pm.test(\"Verify that Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
 													"});\r",
