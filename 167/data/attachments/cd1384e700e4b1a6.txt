@@ -1,0 +1,1 @@
+{"SuccessMessage":"Registration Successful","ErrorMessage":null,"ResponseCode":200,"Total":0,"TotalPages":0,"RowsPerPage":0,"PageItemsCount":0,"PageNumber":0,"QueryString":"","List":null,"Details":"VNMAz\u002BXAqh61UdqLhTKpZzDWy84jEjOIfH9LRDJcNEb5YN3gzgrR2xMAggX6/N6hFTcerDgvaKdMPB2c7\u002BKG4g=="}
