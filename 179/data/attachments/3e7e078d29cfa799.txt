@@ -1,0 +1,5 @@
+{
+    "Email": "Viola.Crona@tafmail.com",
+    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
+    "ConcurrencyStamp": "mShKgzgu1NXzYHSc7+Bq3E5FKNxGJjxcYQ9uLE0UMsK/zvSEpPqbSfj2Cw2ruEw0a1Eu/0SA4VxJTf4kZgsJeQ=="
+}
