@@ -1,5 +1,0 @@
-{
-    "Email": "Jake.Dickinson@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "/Gmxo99ihPy89ZNB3oOlnK5NfIRpmnB0QyU2MrWkGbEfLteZC8Xn0ZYWztOf98zX0O6OqS1wPx9oDZdAoBD3rg=="
-}
