@@ -4446,14 +4446,14 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"PageNumber\": 1,\r\n    \"RowsPerPage\": 999999999,\r\n    \"SearchText\": \"\",\r\n    \"FromDateCreated\": null,\r\n    \"ToDateCreated\": null,\r\n    \"SortBy\": \"DateCreated\",\r\n    \"SortOrder\": \"desc\",\r\n    \"LoanStatus\": \"All\"\r\n}",
+											"raw": "{\r\n    \"pageNumberParam\": 1,\r\n    \"rowsPerPageParam\": \"5\",\r\n    \"queryString\": \"\",\r\n    \"startDate\": null,\r\n    \"endDate\": null,\r\n    \"sortDirection\": \"desc\",\r\n    \"customerId\": \"6f0f0344-4c13-4e06-a5df-29cab489c206\",\r\n    \"categoryUrlSlug\": [\r\n        \"sme-business-loans\"\r\n    ],\r\n    \"RowsPerPage\": \"5\",\r\n    \"TotalPages\": 73,\r\n    \"Total\": 365\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{baseUrl}}/api/loans/get-loan-application-search-list"
+										"url": "{{baseUrl}}api/v2/Application/list-customer-applications"
 									},
 									"response": []
 								}
