@@ -1,9 +1,0 @@
-{
-    "FirstName": "Adolphus",
-    "LastName": "Bailey",
-    "EmailAddress": "Annabell.Runolfsson@tafmail.com",
-    "PhoneNumber": "+2347011725297",
-    "Password": "Assurdly01!",
-    "RetypePassword": "Assurdly01!",
-    "Title": "https://qa.nairacompare.ng"
-}
