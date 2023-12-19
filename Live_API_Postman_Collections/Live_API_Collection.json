@@ -4406,6 +4406,56 @@
 										"url": "{{baseUrl}}/api/loans/get-loan-application-search-list"
 									},
 									"response": []
+								},
+								{
+									"name": "Get Customer Loans Application Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b5a1a0bb-fa46-4f18-8062-03edecc61a37",
+												"exec": [
+													"pm.test(\"Verify that Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"pm.test(\"Verify that Your test Success Message\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.successMessage).to.eql(\"Data retrieve successfully.\");\r",
+													"});\r",
+													"pm.test(\"Verify that Your test name\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.list[0].categoryUrlSlug).to.include(\"sme-business-loans\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "daeb7b2a-fa2f-4087-b4a2-9512850d803d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{Auth_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"PageNumber\": 1,\r\n    \"RowsPerPage\": 999999999,\r\n    \"SearchText\": \"\",\r\n    \"FromDateCreated\": null,\r\n    \"ToDateCreated\": null,\r\n    \"SortBy\": \"DateCreated\",\r\n    \"SortOrder\": \"desc\",\r\n    \"LoanStatus\": \"All\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/loans/get-loan-application-search-list"
+									},
+									"response": []
 								}
 							],
 							"id": "efd1aca1-9809-41e5-a9c0-d04ba48087e9"
