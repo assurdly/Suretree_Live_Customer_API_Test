@@ -1,9 +1,0 @@
-{
-    "FirstName": "Augustine",
-    "LastName": "Boyle",
-    "EmailAddress": "Hertha.Koss@tafmail.com",
-    "PhoneNumber": "+2347011725297",
-    "Password": "Assurdly01!",
-    "RetypePassword": "Assurdly01!",
-    "Title": "https://qa.nairacompare.ng"
-}

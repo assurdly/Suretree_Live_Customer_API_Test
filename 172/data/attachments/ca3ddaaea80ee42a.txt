@@ -1,5 +1,0 @@
-{
-    "Email": "Christopher.Sporer@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "Kr6EZkYqSIxmwJ69TfNbZX1Nq4oPO8SlCxA74TrG4t2DRxE7CXw5u/vqzW/JMq3D8Ow+qVvjICOle+zTlXHMvg=="
-}

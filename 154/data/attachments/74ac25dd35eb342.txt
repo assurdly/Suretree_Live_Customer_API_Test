@@ -1,5 +1,0 @@
-{
-    "Email": "minnie@getnada",
-    "Password": "Funded1!",
-    "RetypePassword": "Funded1!"
-}

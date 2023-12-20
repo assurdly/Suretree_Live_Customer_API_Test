@@ -1,5 +1,0 @@
-{
-    "Email": "Clement.Halvorson@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "e6fV6qTjOFiq8EmQ7RCaZqQ0k09hW66jxEgQxvUw+3e3CgkHkKcljeMQRRwRsiYmCf2/azScDioEytr4p2smHg=="
-}

@@ -1,8 +1,0 @@
-{
-    "Transfer-Encoding": "chunked",
-    "Server": "Microsoft-IIS/10.0",
-    "Strict-Transport-Security": "max-age=2592000",
-    "WWW-Authenticate": "Bearer",
-    "X-Powered-By": "ASP.NET",
-    "Date": "Tue, 19 Dec 2023 11:19:36 GMT"
-}
