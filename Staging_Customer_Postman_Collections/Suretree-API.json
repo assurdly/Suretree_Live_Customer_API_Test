@@ -903,6 +903,98 @@
 					]
 				},
 				{
+					"name": "Auth - Empty email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f5b58f1-73c4-4fb6-bcff-55ed1f5ee588",
+								"exec": [
+									"var resp = JSON.parse(responseBody)",
+									"",
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Verify that Response code is 400\", function () {",
+									"    pm.expect(resp.ResponseCode).to.eql(400);",
+									"});",
+									"pm.test(\"Verify that ErrorMessage returns Email is required\", function () {",
+									"    pm.expect(resp.ErrorMessage).to.eql(\"Email is required.\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c3632d1d-29a2-4cca-9b51-d01c64ab90b8",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2f082da1-5589-4d8e-a49e-50d023d973ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Email\": \"\",\n    \"Password\": \"Ebubechukwu@2003\",\n    \"UniqueIDFromFrontEnd\": \"8236886721053baf37a-221ac20b870d1e5cc5a-21b1030e5a0c783caf4-c0dc4c8537fc62c778-9bb79b2106ee932fe\",\n    \"IpAddress\": \"197.210.84.243\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/Auth"
+					},
+					"response": [
+						{
+							"id": "56537a2e-631e-4aba-8bbc-06d5b96682e7",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"mollit dolor et tempor\",\n  \"password\": \"ea dolore occaecat ad\",\n  \"uniqueIDFromFrontEnd\": \"amet aute laborum nisi\",\n  \"ipAddress\": \"dolore Lorem nulla\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				},
+				{
 					"name": "Oauth - email not found",
 					"event": [
 						{
@@ -999,81 +1091,88 @@
 					]
 				},
 				{
-					"name": "Refresh - successful",
+					"name": "Auth-  successful",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "96a3a45b-942f-4f97-a8aa-83604fbdc9c4",
+								"id": "b970f956-c441-4bec-934e-ba476e6ee178",
 								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"pm.test(\"Verify that SuccessMessage returns 'new token has been generated successfully\", function () {",
+									"",
+									"pm.test(\"Set signin token value\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.SuccessMessage).to.eql(\"New token has been generated successfully.\");",
+									"    pm.environment.set(\"Auth_token\", jsonData.Details.AuthToken);    ",
 									"});",
-									"pm.test(\"Verify that error message returns null\", function () {",
+									"pm.test(\"Set signin refresh token value\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
-									"});",
+									"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    ",
+									"}); ",
+									"pm.test(\"Set signin refresh token value\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.environment.set(\"Customer_Id\", jsonData.Details.AccountDetails.CustomerId);    ",
+									"}); ",
+									"",
+									"tests[\"Http status is 200]\"] = responseCode.code === 200;",
+									"var jsonData = JSON.parse(responseBody);",
+									"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful\";",
+									"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "151f7e1e-a0b1-44c3-9695-b83f21b54d3d",
+								"exec": [
 									""
 								],
 								"type": "text/javascript"
 							}
 						}
 					],
-					"id": "3eae3011-1bd4-4e7c-9134-498afc023d76",
+					"id": "149fa52d-9c24-4636-ab09-364a2fbce4cf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{Auth_token}}"
-							}
-						},
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authToken}}",
-								"type": "text"
+								"value": "application/json",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"AuthToken\": \"{{Auth_token}}\",\n    \"RefreshToken\": \"{{Refresh_token}}\"\n}",
+							"raw": "{\n    \"Email\": \"ogoogbuanu@gmail.com\",\n    //\"adiberichard12@gmail.com\",\n    \"Password\": \"Suretree@1\",\n    \"UniqueIDFromFrontEnd\": \"e510cc98a302df862f3-0bd058d7bf7643928ae-184d73ba1f45fe8afc8-a36e3ec4f82a81867b-2056f9c8ccb8b4dd2\",\n    \"IpAddress\": \"102.89.47.85\"\n    \n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{baseUrl}}/api/Auth/refresh-token"
+						"url": "{{baseUrl}}/api/Auth"
 					},
 					"response": [
 						{
-							"id": "13cdcf8a-f0ba-4325-b9b2-915bd0912d8a",
+							"id": "5a326cff-df6a-472e-b99f-be963a0b5edf",
 							"name": "Success",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"authToken\": \"laborum in\",\n  \"refreshToken\": \"dolor\"\n}",
+									"raw": "{\n  \"email\": \"mollit dolor et tempor\",\n  \"password\": \"ea dolore occaecat ad\",\n  \"uniqueIDFromFrontEnd\": \"amet aute laborum nisi\",\n  \"ipAddress\": \"dolore Lorem nulla\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseUrl}}/api/Auth/refresh-token"
+								"url": "{{baseUrl}}/api/Auth"
 							},
 							"status": "OK",
 							"code": 200,
@@ -13697,98 +13796,6 @@
 				}
 			],
 			"id": "f7da87c2-c06c-483e-a0c1-0160d8fd4744"
-		},
-		{
-			"name": "Auth - Empty email",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "8f5b58f1-73c4-4fb6-bcff-55ed1f5ee588",
-						"exec": [
-							"var resp = JSON.parse(responseBody)",
-							"",
-							"pm.test(\"Verify that Status code is 400\", function () {",
-							"    pm.response.to.have.status(400);",
-							"});",
-							"",
-							"pm.test(\"Verify that Response code is 400\", function () {",
-							"    pm.expect(resp.ResponseCode).to.eql(400);",
-							"});",
-							"pm.test(\"Verify that ErrorMessage returns Email is required\", function () {",
-							"    pm.expect(resp.ErrorMessage).to.eql(\"Email is required.\");",
-							"});",
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "c3632d1d-29a2-4cca-9b51-d01c64ab90b8",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "2f082da1-5589-4d8e-a49e-50d023d973ff",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"Email\": \"\",\n    \"Password\": \"Ebubechukwu@2003\",\n    \"UniqueIDFromFrontEnd\": \"8236886721053baf37a-221ac20b870d1e5cc5a-21b1030e5a0c783caf4-c0dc4c8537fc62c778-9bb79b2106ee932fe\",\n    \"IpAddress\": \"197.210.84.243\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{baseUrl}}/api/Auth"
-			},
-			"response": [
-				{
-					"id": "56537a2e-631e-4aba-8bbc-06d5b96682e7",
-					"name": "Success",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"email\": \"mollit dolor et tempor\",\n  \"password\": \"ea dolore occaecat ad\",\n  \"uniqueIDFromFrontEnd\": \"amet aute laborum nisi\",\n  \"ipAddress\": \"dolore Lorem nulla\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "text",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "text/plain"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": ""
-				}
-			]
 		}
 	],
 	"event": [
