@@ -1,0 +1,135 @@
+{
+    "personalDetail": {
+        "isDualCitizenship": false,
+        "title": "Mr",
+        "emailAddress": "ekene@tafmail.com",
+        "firstName": "Ekene",
+        "middleName": "Taf",
+        "lastName": "",
+        "gender": "Female",
+        "maritalStatusId": "bf76dfc2-1f1a-45d0-9466-d122b0f1a8b1",
+        "dob": "1994-04-14T23:00:00.000Z",
+        "motherMaidenName": "Test",
+        "nonNigerianNationalityId": "46909ea8-06cf-47a9-9cd5-dc8b169ed067",
+        "stateOfOriginId": "075ed228-38bf-4ef5-a377-9909a683ea87",
+        "localGovernmentAreaOfOriginId": "952AB1A6-8987-4C38-82D1-968B37632584",
+        "residentPermitNo": "8789",
+        "taxIdentificationNo": "56789FGHJ",
+        "bankVerificationNumber": 55577754321,
+        "employeeIdentificationNo": "0987",
+        "contactAddress1": "11 Test str",
+        "contactAddress2": "Ikeja",
+        "countryStateId": "075ed228-38bf-4ef5-a377-9909a683ea87",
+        "addressLGAID": "952AB1A6-8987-4C38-82D1-968B37632584",
+        "city": "Lagos",
+        "phoneNumber": "+2347011725297",
+        "alternativePhoneNumber": "+2347011725297"
+    },
+
+    "customerIdentity": {
+        "idType": "International Passport",
+        "idNo": "3456787655",
+        "idDateIssued": "2017-02-08T23:00:00.000Z",
+        "idExpiryDate": "2022-01-07T23:00:00.000Z"
+    },
+
+    "customerEmploymentDetail": {
+        "employmentStatusId": "DC1C13D7-1406-41FA-A4A8-582871B57C6D",
+        "occupation": "it",
+        "currentEmployersName": "Suretree",
+        "dateOfEmployment": "2022-03-16T23:00:00.000Z",
+        "addressLine1": "11",
+        "addressLine2": "Test Str",
+        "landmark": "House",
+        "countryStateId": "075ed228-38bf-4ef5-a377-9909a683ea84",
+        "addressLocalGovernmentAreaId": "E8584794-0B21-4080-B1DB-9569408579EF",
+        "city": "Yaba",
+        "officePhoneNumber": "+2347011725297"
+    },
+
+    "nextOfKin": {
+        "title": "Mr",
+        "firstName": "Adelowo",
+        "middleName": "Ajibola",
+        "lastName": "Oluwadaitan",
+        "emailAddress": "ekene@getnada.com",
+        "addressLine1": "11 Test Str",
+        "city": "Ikeja",
+        "phoneNumber": "+2347011725297",
+        "gender": "female",
+        "dob": "1999-07-08T23:00:00.000Z",
+        "relationship": "Cousin",
+        "otherRelationship": "",
+        "addressLine2": "freemont",
+        "landMark": "Cal",
+        "countryId": "46909ea8-06cf-47a9-9cd5-dc8b169ed067",
+        "countryStateId": "075ed228-38bf-4ef5-a377-9909a683ea62",
+        "lga": "7852784F-6022-49AE-945F-575628BEA2FC"
+    },
+
+    "applicationRequirementDocument": [
+        {
+            "customerLoanApplicationDocumentId": "",
+            "customerApplicationId": "",
+            "isUploaded": true,
+            "fileName": "next-app-chakra-ts.png",
+            "fileSystemId": "3d7e7c46-fe87-4817-bc51-65345f84656a",
+            "requirementId": "dba53fb7-a74c-4eb3-906f-cb5c9f7aaae1",
+            "description": "Valid school or NYSC identity card.",
+            "customerApplicationType": "Savings",
+            "fileSystemName": "next-app-chakra-ts.png"
+        },
+
+        {
+            "customerLoanApplicationDocumentId": "",
+            "customerApplicationId": "",
+            "isUploaded": true,
+            "fileName": "next-app-chakra-ts.png",
+            "fileSystemId": "4798609a-c241-49da-9808-c8567811cfb4",
+            "requirementId": "37b59643-875e-47b8-b8c6-4d08bf07c026",
+            "description": "One passport photograph",
+            "customerApplicationType": "Savings",
+            "fileSystemName": "next-app-chakra-ts.png"
+        },
+
+        {
+            "customerLoanApplicationDocumentId": "",
+            "customerApplicationId": "",
+            "isUploaded": true,
+            "fileName": "next-app-chakra-ts.png",
+            "fileSystemId": "41c65845-5a83-47f3-a61c-7688a70d12b7",
+            "requirementId": "781071f7-1315-460c-9bfa-a630b10ef562",
+            "description": "Fixed Deposit account Opening form",
+            "customerApplicationType": "Savings",
+            "fileSystemName": "next-app-chakra-ts.png"
+        },
+
+        {
+            "customerLoanApplicationDocumentId": "",
+            "customerApplicationId": "",
+            "isUploaded": true,
+            "fileName": "next-app-chakra-ts.png",
+            "fileSystemId": "09fa993b-fb5c-4969-8c72-0df058dddf83",
+            "requirementId": "b91ba58a-fe17-41e8-a696-36531ea2af30",
+            "description": "Utility bill",
+            "customerApplicationType": "Savings",
+            "fileSystemName": "next-app-chakra-ts.png"
+        }
+
+    ],
+
+    "signatureType": "",
+    "depositAmount": "100000",
+    "durationOfSavings": 3,
+    "productProviderDetails": "{\"productName\":\"Investment\",\"productSeoMetaTagUrlSlug\":\"fast-investment\",\"providerName\":\"Fast Credit Limited\",\"providerSeoMetaTagUrlSlug\":\"fast-credit-limited\",\"categorySlug\":\"fixed-deposit-account\",\"minAmount\":100000,\"maxAmount\":5000000,\"minDuration\":3,\"maxDuration\":12,\"minRate\":1,\"maxRate\":2,\"providerFileSystemID\":\"7bda9a50-53bb-448c-ae13-7203e21eba30\",\"savedSavingsApplicationId\":\"\"}",
+    "isBankAccountExist": "false",
+    "customerId": "e099a72c-2ca7-4f55-af79-ca39f8158480",
+    "productId": "e6433ad5-c029-4700-ad0f-dfb439489f21",
+    "categoryId": "facda526-7d87-4529-a67b-0ca06fdea38d",
+    "cardType": "",
+    "transactionAlertPreference": "Email Alert(free),SMS Alert(fee applies)",
+    "electronicBankingPreference": "ATM,Mobile Banking",
+    "savingsStatus": "Savings Pending",
+    "isSavingsApplicationAccountSetup": true,
+    "campaignID": ""
+}
