@@ -1,0 +1,15 @@
+{
+    "pageNumberParam": 1,
+    "rowsPerPageParam": "5",
+    "queryString": "",
+    "startDate": null,
+    "endDate": null,
+    "sortDirection": "desc",
+    "customerId": "6f0f0344-4c13-4e06-a5df-29cab489c206",
+    "categoryUrlSlug": [
+        "sme-business-loans"
+    ],
+    "RowsPerPage": "5",
+    "TotalPages": 73,
+    "Total": 365
+}
