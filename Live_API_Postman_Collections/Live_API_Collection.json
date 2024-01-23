@@ -6731,15 +6731,15 @@
 							"script": {
 								"id": "dddb922e-d835-4b14-9dd5-97e926ccaa2b",
 								"exec": [
-									"pm.test(\"Verify that Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"pm.test(\"Verify that Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"pm.test(\"Verify that Status code name returns OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Verify that error message includes uniqueidfromfrontend is invalid\", function () {\r",
+									"pm.test(\"Verify that SuccessMessage is Password reset link successfully sent\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.ErrorMessage).to.eql(\"UniqueIDFromFrontEnd is invalid\");\r",
+									"    pm.expect(jsonData.SuccessMessage).to.eql(\"Password reset link successfully sent\");\r",
 									"});"
 								],
 								"type": "text/javascript"
