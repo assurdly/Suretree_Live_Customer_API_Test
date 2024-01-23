@@ -1,0 +1,1 @@
+{"isSuccess":true,"message":"Application saved successfully","data":{"savedApplicationId":"23cc3ef1-f6cb-4baa-aa9c-9ae8564b0a18"},"errors":null,"statusCode":200}
