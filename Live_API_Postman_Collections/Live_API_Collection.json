@@ -5871,10 +5871,11 @@
 									"pm.test(\"Verify that Status code name has String\", function () {\r",
 									"    pm.response.to.have.status(\"Unauthorized\");\r",
 									"});\r",
-									"pm.test(\"Verify that isSuccess is false\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.isSuccess).to.eql(false);\r",
-									"});"
+									"//Commented out the assertion, because reponse body is not required for 401 responses\r",
+									"//pm.test(\"Verify that isSuccess is false\", function () {\r",
+									"  //  var jsonData = pm.response.json();\r",
+									"   // pm.expect(jsonData.isSuccess).to.eql(false);\r",
+									"//});"
 								],
 								"type": "text/javascript"
 							}
