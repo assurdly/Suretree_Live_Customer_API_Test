@@ -3937,7 +3937,7 @@
 													"pm.test(\"Verify that Status code name has OK\", function () {\r",
 													"    pm.response.to.have.status(\"Bad Request\");\r",
 													"});\r",
-													"pm.test(\"Verify that Body matches string\", function () {\r",
+													"pm.test(\"Verify that Valid Error message is returned\", function () {\r",
 													"    pm.expect(pm.response.text()).to.include(\"Incomplete customer details submitted! PhoneNumber is empty.\");\r",
 													"});\r",
 													"pm.test(\"Verify that ResponseCode is 400\", function () {\r",
