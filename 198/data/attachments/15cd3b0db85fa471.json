@@ -1,0 +1,11 @@
+{
+    "Content-Type": "application/json",
+    "User-Agent": "PostmanRuntime/7.36.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "cdecd030-e8d6-4aec-983f-351aca0dd57b",
+    "Host": "api.nairacompare.ng",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "2422"
+}
