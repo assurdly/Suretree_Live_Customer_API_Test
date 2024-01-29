@@ -7093,59 +7093,6 @@
 								"url": "{{baseUrl}}/api/v2/Messages/send-sms-otp"
 							},
 							"response": []
-						},
-						{
-							"name": "Validate Sms Otp",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "744dcb6b-f1f7-47f5-9390-f20d5a3be87d",
-										"exec": [
-											"pm.test(\"Verify that Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Verify that Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"OK\");\r",
-											"});\r",
-											"pm.test(\"Verify that message returns OTP is validated successfully\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.message).to.eql(\"OTP is validated successfully\");\r",
-											"});\r",
-											"pm.test(\"Verify that isSuccess is true\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Verify that statusCode is 200\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.statusCode).to.eql(200);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "9e05d2b1-35ad-41b5-b583-4d639d6fb1bd",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\r\n    \"MobileNumber\":\"{{smsPhoneNumber}}\",\r\n    \"Otp\": \"1234\"\r\n\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/Messages/validate-sms-otp"
-							},
-							"response": []
 						}
 					],
 					"id": "cb0a5504-f1f3-4d62-bdcb-88844dcea6e1"
