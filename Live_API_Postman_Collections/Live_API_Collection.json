@@ -7503,7 +7503,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/V2/Application/download-customer-application-pdf?applicationId={{applicationid}}",
+							"raw": "{{baseUrl}}/api/V2/Application/download-customer-application-pdf?applicationId={{Applicationid}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -7516,7 +7516,7 @@
 							"query": [
 								{
 									"key": "applicationId",
-									"value": "{{applicationid}}"
+									"value": "{{Applicationid}}"
 								}
 							]
 						}
@@ -7612,7 +7612,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v2/Application/get-customer-application-details?applicationId={{applicationid}}",
+							"raw": "{{baseUrl}}/api/v2/Application/get-customer-application-details?applicationId={{Applicationid}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -7625,7 +7625,7 @@
 							"query": [
 								{
 									"key": "applicationId",
-									"value": "{{applicationid}}"
+									"value": "{{Applicationid}}"
 								}
 							]
 						}
