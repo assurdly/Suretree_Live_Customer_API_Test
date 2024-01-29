@@ -1,5 +1,0 @@
-{
-    "Email": "Antwan.Cole@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "+iu1uIB2jeFnGlqMvnN9c40zZYXf7+HEG2Xnk2W3T+j27gT+LJUm2CYFaMReuHF32ZiSD1U+8LwaT+Hc5yRVGw=="
-}
