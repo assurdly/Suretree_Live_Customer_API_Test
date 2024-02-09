@@ -6364,6 +6364,557 @@
 			"id": "acde22d9-e09e-4e4c-969f-ae0c10fca06a"
 		},
 		{
+			"name": "Fixed deposit for naira compare",
+			"item": [
+				{
+					"name": "SMS OTP",
+					"item": [
+						{
+							"name": "Send Sms Otp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6d593126-67c5-458e-9138-82e1c3a17500",
+										"exec": [
+											"pm.test(\"Verify that Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify that Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Created\");\r",
+											"});\r",
+											"pm.test(\"Verify that test message returns OTP sent successfully\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql(\"OTP sent successfully\");\r",
+											"});\r",
+											"pm.test(\"Verify that isSuccess is true\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify that statusCode is 200\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.statusCode).to.eql(201);\r",
+											"});\r",
+											"pm.test('set phoneNumber', ()=>{\r",
+											"    var RequestData = JSON.parse(pm.request.body.raw)\r",
+											"    pm.collectionVariables.set('smsPhoneNumber', RequestData.MobileNumber)\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "4b5ef58f-a0fd-4ce9-98d3-5cf80582a370",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"MobileNumber\":\"+23480{{$randomInt}}\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/v2/Messages/send-sms-otp"
+							},
+							"response": []
+						}
+					],
+					"id": "cb0a5504-f1f3-4d62-bdcb-88844dcea6e1"
+				},
+				{
+					"name": "Auth- Login successful",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b970f956-c441-4bec-934e-ba476e6ee178",
+								"exec": [
+									"",
+									"pm.test(\"Set signin token value\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.environment.set(\"Auth_token\", jsonData.Details.AuthToken);    ",
+									"});",
+									"pm.test(\"Set signin refresh token value\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    ",
+									"}); ",
+									"",
+									"",
+									"tests[\"Http status is 200]\"] = responseCode.code === 200;",
+									"var jsonData = JSON.parse(responseBody);",
+									"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful\";",
+									"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "815ef215-100d-4adf-97ae-44c2e6a5faa4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    //\"Email\":\"tester.account@suretree.com\",\n    \"Email\":\"priscaline@assurdly.com\",\n    //\"Password\": \"demo123\",\n     \"Password\":\"Priscaline1$\",\n    \"UniqueIDFromFrontEnd\": \"8236886721053baf37a-221ac20b870d1e5cc5a-21b1030e5a0c783caf4-c0dc4c8537fc62c778-9bb79b2106ee932fe\",\n    \"IpAddress\": \"197.210.84.243\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/Auth"
+					},
+					"response": [
+						{
+							"id": "d238c1bc-0e8e-4e8c-8899-b937b8623fb7",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"mollit dolor et tempor\",\n  \"password\": \"ea dolore occaecat ad\",\n  \"uniqueIDFromFrontEnd\": \"amet aute laborum nisi\",\n  \"ipAddress\": \"dolore Lorem nulla\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "User Profile Verification Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "afed003f-8e6b-46c6-bfc0-e9416bffb4e9",
+								"exec": [
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Verify that Status code name has String\", ()=>{\r",
+									"    pm.response.to.have.status(\"OK\")\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Verify that response Body matches CustomerId\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"CustomerId\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify that response Body matches FirstName\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"FirstName\");\r",
+									"});\r",
+									" pm.test(\"Verify that response Body matches LastName\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"LastName\");\r",
+									"});\r",
+									" pm.test(\"Verify that response Body matches EmailAddress\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"EmailAddress\");\r",
+									"});\r",
+									" pm.test(\"Verify that response Body matches Gender\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Gender\");\r",
+									"});\r",
+									" pm.test(\"Verify that response Body matches PhoneNumber\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"PhoneNumber\");\r",
+									"});\r",
+									"\r",
+									" pm.test(\"Verify that response Body matches DOB\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"DOB\");\r",
+									"});\r",
+									" pm.test(\"Verify that response Body matches MaritalStatusID\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"MaritalStatusID\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "cb7c4500-99f1-4111-8332-dfc5d2b99048",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/api/Customers/get-customer-profile/6f0f0344-4c13-4e06-a5df-29cab489c206"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer application listing page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ecd7ff39-f37f-49ae-b174-c517aa507766",
+								"exec": [
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify that Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Verify that message returns Success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
+									"});\r",
+									"pm.test(\"Verify that isSuccess is true\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+									"});\r",
+									"pm.test(\"Verify that successMessage returns Records retrieved successfully\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.successMessage).to.eql(\"Records retrieved successfully\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify that errorMessage is null\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.errorMessage).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify that responseCode is 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.responseCode).to.eql(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2c8e5d7f-5ad6-4000-a0b1-0428efa3c5fd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"pageNumberParam\": 1,\r\n\r\n    \"rowsPerPageParam\": \"5\",\r\n\r\n    \"startDate\": null,\r\n\r\n    \"endDate\": null,\r\n\r\n    \"customerId\": \"6f0f0344-4c13-4e06-a5df-29cab489c206\",\r\n\r\n    \"categoryUrlSlug\": [\r\n\r\n        \"personal-savings-account\",\r\n\r\n        \"children-savings-account\",\r\n\r\n        \"fixed-deposit-account\"\r\n\r\n    ],\r\n\r\n    \"TotalPages\": 1,\r\n\r\n    \"Total\": 1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/Application/list-customer-applications"
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Fixed Deposit Application",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7bb2540f-ddef-46d6-9bca-78bc836fe59e",
+								"exec": [
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Verify that Status code name has OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"var Response = pm.response.json()\r",
+									"pm.test(\"Verify that isSuccess is true\", function () {\r",
+									"    pm.expect(Response.isSuccess).to.eql(true)\r",
+									"});\r",
+									"pm.test(\"Verify that ErrorMessage is null\", function () {\r",
+									"    pm.expect(Response.message).to.eql(null)\r",
+									"});\r",
+									"pm.test(\"Verify that Data exist\", function () {\r",
+									"    pm.expect(Response.data).to.exist\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d82bf478-53bd-46b8-851f-17d732b504b1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"application\": {\r\n        \"ProductId\": \"aadaa410-06b9-43f7-b7a9-f44d4c26ac85\",\r\n        \"CategoryId\": \"facda526-7d87-4529-a67b-0ca06fdea38d\",\r\n        \"Amount\": \"{{$randomInt}}\",\r\n        \"Duration\": 3,\r\n        \"CampaignId\": \"\",\r\n        \"SavedApplicationId\": \"2f60b01e-3b37-4525-a652-77cff1911b3b\"\r\n    },\r\n    \"bankDetails\": {\r\n        \"customerVerificationNumber\": \"22152216322\",\r\n        \"sameAsFundSourceAccount\": true,\r\n        \"fundSourceAccountId\": {\r\n            \"bankAccountNumber\": \"0773355268\",\r\n            \"bankId\": \"dd41af1a-d8fc-4db7-a45b-1d7665fddc30\",\r\n            \"bankCode\": \"044\",\r\n            \"bankAccountName\": \"Priscaline Uzor \",\r\n            \"sourceOfFunds\": 139\r\n        },\r\n        \"incomingFundSourceAccountId\": null\r\n    },\r\n    \"nextOfKin\": {\r\n        \"firstName\": \"ghhjjjj\",\r\n        \"lastName\": \"hggffff\",\r\n        \"emailAddress\": \"fgfghhhh@gmail.com\",\r\n        \"phoneNumber\": \"+2348077665544\",\r\n        \"relationship\": 151,\r\n        \"otherRelationship\": null\r\n    },\r\n    \"personalDetail\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Priscaline\",\r\n        \"middleName\": \"Chigozirim\",\r\n        \"lastName\": \"Uzor\",\r\n        \"emailAddress\": \"priscaline@assurdly.com\",\r\n        \"phoneNumber\": \"+2347086490512\",\r\n        \"maritalStatusId\": 163,\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1995-05-07T23:00:00.000Z\",\r\n        \"isCloseRelativesPep\": false,\r\n        \"pepDetails\": null,\r\n        \"passportPictureFileSystemId\": \"4550306c-b741-4724-83ee-e98e3f3f95ff\",\r\n        \"personalDetailIdtype\": 13,\r\n        \"personalDetailIdtypeFileSystemId\": \"fa10adce-24ef-4be7-bab5-6a7a2ffd506c\",\r\n        \"relationshipWithChild\": null,\r\n        \"isSubscribedToNewsLetter\": false,\r\n        \"registerUserOtpId\": \"37324788-c838-4fea-82ed-70502f02e3eb\"\r\n    },\r\n    \"residentialDetails\": {\r\n        \"areYouNigerian\": true,\r\n        \"addressLine1\": \"8 Power line Street, Off Akilo, Lagos\",\r\n        \"addressLine2\": null,\r\n        \"stateId\": \"075ed228-38bf-4ef5-a377-9909a683ea76\",\r\n        \"lgaId\": \"42FEAD9E-5BB2-4645-9DC9-BED10B9EA0A4\",\r\n        \"townCity\": \"Lagos\",\r\n        \"proofOfAddressFileSystemId\": \"467f14cb-562a-4742-bcca-aaecaeff3ab9\",\r\n        \"areYouEcowasregion\": null,\r\n        \"ecowasregionBiodataFileSystemId\": null,\r\n        \"ecowasregionWorkPermitBiodataSystemId\": null,\r\n        \"countryOfResidenceId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\"\r\n    },\r\n    \"additionalFields\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/Application/save-application"
+					},
+					"response": []
+				},
+				{
+					"name": "Auto Save Feature for every Click",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6d8d16a5-de46-445f-a7b1-76c4b88e452b",
+								"exec": [
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Verify that Status code name has String\", ()=>{\r",
+									"    pm.response.to.have.status(\"OK\")\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Your test isSuccess is true\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify that test message returns Application saved successfully\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Application saved successfully\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify statusCode is 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.statusCode).to.eql(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "60ddccdf-3e59-4dd8-ae9a-a3f1dfb16d13",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"SavedApplicationId\":\"\",\r\n\"CustomerId\":\"3c894948-0a0a-42d2-8719-91a995696736\",\r\n\"CustomerDescription\":\"adelowo\",\r\n\"ApplicationJsonPayload\":\" \",\r\n\"CurrentStep\":1,\r\n\"IsApplied\":false,\r\n\"ProductType\":\"facda526-7d87-4529-a67b-0ca06fdea38d\",\r\n\"email\":\"adelowo.mi@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/Savings/fixed-deposit/savings-for-later"
+					},
+					"response": []
+				},
+				{
+					"name": "Download customer app pdf",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c98fea6a-d14b-4b87-a72a-d0c434a42bd0",
+								"exec": [
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Verify that Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3597f80c-75df-4287-8ee7-930a77c364b4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/V2/Application/download-customer-application-pdf?applicationId={{Applicationid}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"V2",
+								"Application",
+								"download-customer-application-pdf"
+							],
+							"query": [
+								{
+									"key": "applicationId",
+									"value": "{{Applicationid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updating user profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e358fd4-73a1-49db-bb2f-e2399cadcf3b",
+								"exec": [
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Verify that Your test success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "60e04807-73a9-475e-8adc-f8e0a6539254",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerId\": \"d45a0445-9bf2-4cf2-aa4c-19c67e5f43dd\",\r\n    \"FirstName\": \"Priscaline\",\r\n    \"LastName\": \"Uzor\",\r\n    \"Gender\": \"female\",\r\n    \"PhoneNumber\": \"+2347086490512\",\r\n    \"DOB\": \"07/05/1995\",\r\n    \"MaritalStatusID\": \"168\",\r\n    \"EmailAddress\": \"priscaline@assurdly.com\",\r\n    \"IdentificationReferenceID\": null,\r\n    \"IdentificationReferenceDocURL\": \"https://fileservice.suretree.com/api/file//f5e1ca5b-aa06-11ec-9d2e-f9de6d886048\",\r\n    \"ContactAddress1\": \"{{$randomStreetAddress}}, Lagos\",\r\n    \"ContactAddress2\": \"20 {{$randomStreetName}} street lagos\",\r\n    \"City\": \"Lagos                                             \",\r\n    \"CountryStateID\": \"075ed228-38bf-4ef5-a377-9909a683ea76\",\r\n    \"ReceiveNewsLetter\": \"No\",\r\n    \"DateRegister\": \"06/09/2023\",\r\n    \"ProfilePhotoReferenceID\": null,\r\n    \"ProfilePhoto\": \"https://fileservice.suretree.com/api/file//f5e1ca5b-aa06-11ec-9d2e-f9de6d886048\",\r\n    \"Bvnverified\": true,\r\n    \"PhoneNumberVerified\": true,\r\n    \"UserVerificationStatus\": \"Verified\",\r\n    \"RegisterUserOtpId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/auth/update-account"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer application details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5fc807b7-8233-403b-a5ce-3fb125bbdc12",
+								"exec": [
+									"pm.test(\"Verify that Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify that Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Verify that message returns Success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
+									"});\r",
+									"pm.test(\"Verify that isSuccess is true\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4816c7de-9273-4882-af93-8118d48cf69e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v2/Application/get-customer-application-details?applicationId={{Applicationid}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"Application",
+								"get-customer-application-details"
+							],
+							"query": [
+								{
+									"key": "applicationId",
+									"value": "{{Applicationid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "025d0598-3860-4a1f-b8f8-9a97d207967c"
+		},
+		{
 			"name": "Forgot password",
 			"item": [
 				{
@@ -7030,557 +7581,6 @@
 				}
 			],
 			"id": "a5969fc2-83a0-4e0d-ac18-02e360f37b77"
-		},
-		{
-			"name": "Fixed deposit for naira compare",
-			"item": [
-				{
-					"name": "SMS OTP",
-					"item": [
-						{
-							"name": "Send Sms Otp",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "6d593126-67c5-458e-9138-82e1c3a17500",
-										"exec": [
-											"pm.test(\"Verify that Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Verify that Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Created\");\r",
-											"});\r",
-											"pm.test(\"Verify that test message returns OTP sent successfully\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.message).to.eql(\"OTP sent successfully\");\r",
-											"});\r",
-											"pm.test(\"Verify that isSuccess is true\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Verify that statusCode is 200\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.statusCode).to.eql(201);\r",
-											"});\r",
-											"pm.test('set phoneNumber', ()=>{\r",
-											"    var RequestData = JSON.parse(pm.request.body.raw)\r",
-											"    pm.collectionVariables.set('smsPhoneNumber', RequestData.MobileNumber)\r",
-											"})"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "4b5ef58f-a0fd-4ce9-98d3-5cf80582a370",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"MobileNumber\":\"+23480{{$randomInt}}\"\r\n\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/Messages/send-sms-otp"
-							},
-							"response": []
-						}
-					],
-					"id": "cb0a5504-f1f3-4d62-bdcb-88844dcea6e1"
-				},
-				{
-					"name": "Auth- Login successful",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b970f956-c441-4bec-934e-ba476e6ee178",
-								"exec": [
-									"",
-									"pm.test(\"Set signin token value\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.environment.set(\"Auth_token\", jsonData.Details.AuthToken);    ",
-									"});",
-									"pm.test(\"Set signin refresh token value\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    ",
-									"}); ",
-									"",
-									"",
-									"tests[\"Http status is 200]\"] = responseCode.code === 200;",
-									"var jsonData = JSON.parse(responseBody);",
-									"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful\";",
-									"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "815ef215-100d-4adf-97ae-44c2e6a5faa4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    //\"Email\":\"tester.account@suretree.com\",\n    \"Email\":\"priscaline@assurdly.com\",\n    //\"Password\": \"demo123\",\n     \"Password\":\"Priscaline1$\",\n    \"UniqueIDFromFrontEnd\": \"8236886721053baf37a-221ac20b870d1e5cc5a-21b1030e5a0c783caf4-c0dc4c8537fc62c778-9bb79b2106ee932fe\",\n    \"IpAddress\": \"197.210.84.243\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": [
-						{
-							"id": "d238c1bc-0e8e-4e8c-8899-b937b8623fb7",
-							"name": "Success",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"email\": \"mollit dolor et tempor\",\n  \"password\": \"ea dolore occaecat ad\",\n  \"uniqueIDFromFrontEnd\": \"amet aute laborum nisi\",\n  \"ipAddress\": \"dolore Lorem nulla\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/Auth"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": ""
-						}
-					]
-				},
-				{
-					"name": "User Profile Verification Status",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "afed003f-8e6b-46c6-bfc0-e9416bffb4e9",
-								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Verify that Status code name has String\", ()=>{\r",
-									"    pm.response.to.have.status(\"OK\")\r",
-									"})\r",
-									"\r",
-									"pm.test(\"Verify that response Body matches CustomerId\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"CustomerId\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that response Body matches FirstName\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"FirstName\");\r",
-									"});\r",
-									" pm.test(\"Verify that response Body matches LastName\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"LastName\");\r",
-									"});\r",
-									" pm.test(\"Verify that response Body matches EmailAddress\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"EmailAddress\");\r",
-									"});\r",
-									" pm.test(\"Verify that response Body matches Gender\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Gender\");\r",
-									"});\r",
-									" pm.test(\"Verify that response Body matches PhoneNumber\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"PhoneNumber\");\r",
-									"});\r",
-									"\r",
-									" pm.test(\"Verify that response Body matches DOB\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"DOB\");\r",
-									"});\r",
-									" pm.test(\"Verify that response Body matches MaritalStatusID\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"MaritalStatusID\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "cb7c4500-99f1-4111-8332-dfc5d2b99048",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{Auth_token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/api/Customers/get-customer-profile/6f0f0344-4c13-4e06-a5df-29cab489c206"
-					},
-					"response": []
-				},
-				{
-					"name": "Customer application listing page",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "ecd7ff39-f37f-49ae-b174-c517aa507766",
-								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Verify that message returns Success\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
-									"});\r",
-									"pm.test(\"Verify that isSuccess is true\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
-									"});\r",
-									"pm.test(\"Verify that successMessage returns Records retrieved successfully\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.data.successMessage).to.eql(\"Records retrieved successfully\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that errorMessage is null\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.data.errorMessage).to.eql(null);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that responseCode is 200\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.data.responseCode).to.eql(200);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "2c8e5d7f-5ad6-4000-a0b1-0428efa3c5fd",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{Auth_token}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\r\n    \"pageNumberParam\": 1,\r\n\r\n    \"rowsPerPageParam\": \"5\",\r\n\r\n    \"startDate\": null,\r\n\r\n    \"endDate\": null,\r\n\r\n    \"customerId\": \"6f0f0344-4c13-4e06-a5df-29cab489c206\",\r\n\r\n    \"categoryUrlSlug\": [\r\n\r\n        \"personal-savings-account\",\r\n\r\n        \"children-savings-account\",\r\n\r\n        \"fixed-deposit-account\"\r\n\r\n    ],\r\n\r\n    \"TotalPages\": 1,\r\n\r\n    \"Total\": 1\r\n\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v2/Application/list-customer-applications"
-					},
-					"response": []
-				},
-				{
-					"name": "Submit Fixed Deposit Application",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7bb2540f-ddef-46d6-9bca-78bc836fe59e",
-								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Verify that Status code name has OK\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"var Response = pm.response.json()\r",
-									"pm.test(\"Verify that isSuccess is true\", function () {\r",
-									"    pm.expect(Response.isSuccess).to.eql(true)\r",
-									"});\r",
-									"pm.test(\"Verify that ErrorMessage is null\", function () {\r",
-									"    pm.expect(Response.message).to.eql(null)\r",
-									"});\r",
-									"pm.test(\"Verify that Data exist\", function () {\r",
-									"    pm.expect(Response.data).to.exist\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "d82bf478-53bd-46b8-851f-17d732b504b1",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n{\r\n    \"application\": {\r\n        \"ProductId\": \"aadaa410-06b9-43f7-b7a9-f44d4c26ac85\",\r\n        \"CategoryId\": \"facda526-7d87-4529-a67b-0ca06fdea38d\",\r\n        \"Amount\": \"{{$randomInt}}\",\r\n        \"Duration\": 3,\r\n        \"CampaignId\": \"\",\r\n        \"SavedApplicationId\": \"2f60b01e-3b37-4525-a652-77cff1911b3b\"\r\n    },\r\n    \"bankDetails\": {\r\n        \"customerVerificationNumber\": \"22152216322\",\r\n        \"sameAsFundSourceAccount\": true,\r\n        \"fundSourceAccountId\": {\r\n            \"bankAccountNumber\": \"0773355268\",\r\n            \"bankId\": \"dd41af1a-d8fc-4db7-a45b-1d7665fddc30\",\r\n            \"bankCode\": \"044\",\r\n            \"bankAccountName\": \"Priscaline Uzor \",\r\n            \"sourceOfFunds\": 139\r\n        },\r\n        \"incomingFundSourceAccountId\": null\r\n    },\r\n    \"nextOfKin\": {\r\n        \"firstName\": \"ghhjjjj\",\r\n        \"lastName\": \"hggffff\",\r\n        \"emailAddress\": \"fgfghhhh@gmail.com\",\r\n        \"phoneNumber\": \"+2348077665544\",\r\n        \"relationship\": 151,\r\n        \"otherRelationship\": null\r\n    },\r\n    \"personalDetail\": {\r\n        \"title\": \"Miss\",\r\n        \"firstName\": \"Priscaline\",\r\n        \"middleName\": \"Chigozirim\",\r\n        \"lastName\": \"Uzor\",\r\n        \"emailAddress\": \"priscaline@assurdly.com\",\r\n        \"phoneNumber\": \"+2347086490512\",\r\n        \"maritalStatusId\": 163,\r\n        \"gender\": \"female\",\r\n        \"dob\": \"1995-05-07T23:00:00.000Z\",\r\n        \"isCloseRelativesPep\": false,\r\n        \"pepDetails\": null,\r\n        \"passportPictureFileSystemId\": \"4550306c-b741-4724-83ee-e98e3f3f95ff\",\r\n        \"personalDetailIdtype\": 13,\r\n        \"personalDetailIdtypeFileSystemId\": \"fa10adce-24ef-4be7-bab5-6a7a2ffd506c\",\r\n        \"relationshipWithChild\": null,\r\n        \"isSubscribedToNewsLetter\": false,\r\n        \"registerUserOtpId\": \"37324788-c838-4fea-82ed-70502f02e3eb\"\r\n    },\r\n    \"residentialDetails\": {\r\n        \"areYouNigerian\": true,\r\n        \"addressLine1\": \"8 Power line Street, Off Akilo, Lagos\",\r\n        \"addressLine2\": null,\r\n        \"stateId\": \"075ed228-38bf-4ef5-a377-9909a683ea76\",\r\n        \"lgaId\": \"42FEAD9E-5BB2-4645-9DC9-BED10B9EA0A4\",\r\n        \"townCity\": \"Lagos\",\r\n        \"proofOfAddressFileSystemId\": \"467f14cb-562a-4742-bcca-aaecaeff3ab9\",\r\n        \"areYouEcowasregion\": null,\r\n        \"ecowasregionBiodataFileSystemId\": null,\r\n        \"ecowasregionWorkPermitBiodataSystemId\": null,\r\n        \"countryOfResidenceId\": \"46909ea8-06cf-47a9-9cd5-dc8b169ed067\"\r\n    },\r\n    \"additionalFields\": {}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v2/Application/save-application"
-					},
-					"response": []
-				},
-				{
-					"name": "Auto Save Feature for every Click",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "6d8d16a5-de46-445f-a7b1-76c4b88e452b",
-								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Verify that Status code name has String\", ()=>{\r",
-									"    pm.response.to.have.status(\"OK\")\r",
-									"})\r",
-									"\r",
-									"pm.test(\"Your test isSuccess is true\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that test message returns Application saved successfully\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.message).to.eql(\"Application saved successfully\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify statusCode is 200\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.statusCode).to.eql(200);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "60ddccdf-3e59-4dd8-ae9a-a3f1dfb16d13",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"SavedApplicationId\":\"\",\r\n\"CustomerId\":\"3c894948-0a0a-42d2-8719-91a995696736\",\r\n\"CustomerDescription\":\"adelowo\",\r\n\"ApplicationJsonPayload\":\" \",\r\n\"CurrentStep\":1,\r\n\"IsApplied\":false,\r\n\"ProductType\":\"facda526-7d87-4529-a67b-0ca06fdea38d\",\r\n\"email\":\"adelowo.mi@gmail.com\"\r\n\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v2/Savings/fixed-deposit/savings-for-later"
-					},
-					"response": []
-				},
-				{
-					"name": "Download customer app pdf",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "c98fea6a-d14b-4b87-a72a-d0c434a42bd0",
-								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Verify that Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "3597f80c-75df-4287-8ee7-930a77c364b4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{Auth_token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/V2/Application/download-customer-application-pdf?applicationId={{Applicationid}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"V2",
-								"Application",
-								"download-customer-application-pdf"
-							],
-							"query": [
-								{
-									"key": "applicationId",
-									"value": "{{Applicationid}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Updating user profile",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2e358fd4-73a1-49db-bb2f-e2399cadcf3b",
-								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Verify that Your test success\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "60e04807-73a9-475e-8adc-f8e0a6539254",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{Auth_token}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"CustomerId\": \"d45a0445-9bf2-4cf2-aa4c-19c67e5f43dd\",\r\n    \"FirstName\": \"Priscaline\",\r\n    \"LastName\": \"Uzor\",\r\n    \"Gender\": \"female\",\r\n    \"PhoneNumber\": \"+2347086490512\",\r\n    \"DOB\": \"07/05/1995\",\r\n    \"MaritalStatusID\": \"168\",\r\n    \"EmailAddress\": \"priscaline@assurdly.com\",\r\n    \"IdentificationReferenceID\": null,\r\n    \"IdentificationReferenceDocURL\": \"https://fileservice.suretree.com/api/file//f5e1ca5b-aa06-11ec-9d2e-f9de6d886048\",\r\n    \"ContactAddress1\": \"{{$randomStreetAddress}}, Lagos\",\r\n    \"ContactAddress2\": \"20 {{$randomStreetName}} street lagos\",\r\n    \"City\": \"Lagos                                             \",\r\n    \"CountryStateID\": \"075ed228-38bf-4ef5-a377-9909a683ea76\",\r\n    \"ReceiveNewsLetter\": \"No\",\r\n    \"DateRegister\": \"06/09/2023\",\r\n    \"ProfilePhotoReferenceID\": null,\r\n    \"ProfilePhoto\": \"https://fileservice.suretree.com/api/file//f5e1ca5b-aa06-11ec-9d2e-f9de6d886048\",\r\n    \"Bvnverified\": true,\r\n    \"PhoneNumberVerified\": true,\r\n    \"UserVerificationStatus\": \"Verified\",\r\n    \"RegisterUserOtpId\": null\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v2/auth/update-account"
-					},
-					"response": []
-				},
-				{
-					"name": "Customer application details",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "5fc807b7-8233-403b-a5ce-3fb125bbdc12",
-								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Verify that message returns Success\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
-									"});\r",
-									"pm.test(\"Verify that isSuccess is true\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "4816c7de-9273-4882-af93-8118d48cf69e",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{Auth_token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/v2/Application/get-customer-application-details?applicationId={{Applicationid}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"Application",
-								"get-customer-application-details"
-							],
-							"query": [
-								{
-									"key": "applicationId",
-									"value": "{{Applicationid}}"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"id": "025d0598-3860-4a1f-b8f8-9a97d207967c"
 		}
 	],
 	"event": [
