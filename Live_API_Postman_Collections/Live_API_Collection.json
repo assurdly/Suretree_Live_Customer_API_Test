@@ -1070,7 +1070,7 @@
 			"name": "View products",
 			"item": [
 				{
-					"name": "/api/Products",
+					"name": "Get all Products",
 					"event": [
 						{
 							"listen": "test",
@@ -1146,7 +1146,7 @@
 					]
 				},
 				{
-					"name": "/api/Products/get-loan-products",
+					"name": "Get-loan-products",
 					"event": [
 						{
 							"listen": "test",
@@ -1236,7 +1236,7 @@
 					]
 				},
 				{
-					"name": "/api/Products/get-loan-product/:id",
+					"name": "Get-loan-product by id",
 					"event": [
 						{
 							"listen": "test",
