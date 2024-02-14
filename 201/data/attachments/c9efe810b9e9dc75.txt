@@ -1,0 +1,5 @@
+{
+    "Email": "adiberichard12@gmail.com",
+    "Password": "Adiberichard@123",
+    "RetypePassword": "Adiberichard@123"
+}
