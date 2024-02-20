@@ -1,9 +1,0 @@
-{
-    "FirstName": "Adonis",
-    "LastName": "Bernhard",
-    "EmailAddress": "Adolfo.Altenwerth@tafmail.com",
-    "PhoneNumber": "+2347011725297",
-    "Password": "Assurdly01!",
-    "RetypePassword": "Assurdly01!",
-    "Title": "https://app.nairacompare.ng"
-}

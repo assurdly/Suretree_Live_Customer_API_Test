@@ -1,5 +1,0 @@
-{
-    "Email": "Miracle.Christiansen@tafmail.com",
-    "UniqueIDFromFrontEnd": "e61b85aac8d036adc2f-e0e9ac4a7684cdc6417-9cd6e79679f8f237100-423993ced08b847651-4ea1a3f08b7e9b602",
-    "ConcurrencyStamp": "lFS1z4DufmXFAVKrm5V9gLEIAKJLdXv4FSuddwo0sAZQuoKtfPKVFT/0CFt7cr76Napj+zlyYnWp/kS3bJNTFg=="
-}
