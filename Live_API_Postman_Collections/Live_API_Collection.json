@@ -4115,7 +4115,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"Email\": \"adiberichard12@gmail.com\",\n    \"Password\": \"Adiberichard@12\",\n    \"UniqueIDFromFrontEnd\": \"6d7d59f4981e1f0e6ea-6652b784583101ece4e-969a350d8b9c5127211-041c9f831f734c7e6e-90fba3c8bb874a57f\",\n    \"IpAddress\": \"102.89.40.138\"\n}",
+											"raw": "{\n    \"Email\": \"adiberichard12@gmail.com\",\n    \"Password\": \"{{newPassword}}\",\n    \"UniqueIDFromFrontEnd\": \"6d7d59f4981e1f0e6ea-6652b784583101ece4e-969a350d8b9c5127211-041c9f831f734c7e6e-90fba3c8bb874a57f\",\n    \"IpAddress\": \"102.89.40.138\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4285,7 +4285,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"Email\": \"adiberichard12@gmail.com\",\n    \"Password\": \"Adiberichard@12\",\n    \"UniqueIDFromFrontEnd\": \"6d7d59f4981e1f0e6ea-6652b784583101ece4e-969a350d8b9c5127211-041c9f831f734c7e6e-90fba3c8bb874a57f\",\n    \"IpAddress\": \"102.89.40.138\"\n}",
+											"raw": "{\n    \"Email\": \"adiberichard12@gmail.com\",\n    \"Password\": \"{{newPassword}}\",\n    \"UniqueIDFromFrontEnd\": \"6d7d59f4981e1f0e6ea-6652b784583101ece4e-969a350d8b9c5127211-041c9f831f734c7e6e-90fba3c8bb874a57f\",\n    \"IpAddress\": \"102.89.40.138\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -7223,7 +7223,7 @@
 								"id": "41db5f1a-c312-4ac4-b07a-8ef860450d4e",
 								"exec": [
 									"var requestData = JSON.parse(pm.request.body.raw)\r",
-									"pm.collectionVariables.set('newPassword', requestData.Password)\r",
+									"\r",
 									"\r",
 									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -7250,8 +7250,10 @@
 								"exec": [
 									"let number = Math.floor(Math.random() * 1000)\r",
 									"console.log(number)\r",
-									"let NewPassword = \"Adiberichard@\"+ number\r",
-									"console.log(NewPassword)"
+									"let newPassword = \"Adiberichard@\"+ number\r",
+									"console.log(newPassword)\r",
+									"\r",
+									"pm.collectionVariables.set('newPassword', newPassword)"
 								],
 								"type": "text/javascript"
 							}
@@ -7269,7 +7271,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"adiberichard12@gmail.com\",\r\n    \"Password\": \"{{NewPassword}}\",\r\n    \"RetypePassword\": \"{{NewPassword}}\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"adiberichard12@gmail.com\",\r\n    \"Password\": \"{{newPassword}}\",\r\n    \"RetypePassword\": \"{{newPassword}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
