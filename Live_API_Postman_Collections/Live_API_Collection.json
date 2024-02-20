@@ -4158,7 +4158,7 @@
 									]
 								},
 								{
-									"name": "Get Customer Loans Application Copy",
+									"name": "Get Customer Loans Application",
 									"event": [
 										{
 											"listen": "test",
@@ -4328,7 +4328,7 @@
 									]
 								},
 								{
-									"name": "Get Customer Loans Application Copy",
+									"name": "Get Customer Loans Application",
 									"event": [
 										{
 											"listen": "test",
