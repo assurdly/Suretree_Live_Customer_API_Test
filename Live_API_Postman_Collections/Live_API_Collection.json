@@ -7222,6 +7222,9 @@
 							"script": {
 								"id": "41db5f1a-c312-4ac4-b07a-8ef860450d4e",
 								"exec": [
+									"var requestData = JSON.parse(pm.request.body.raw)\r",
+									"pm.collectionVariables.set('newPassword', requestData.Password)\r",
+									"\r",
 									"pm.test(\"Verify that Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
@@ -7239,6 +7242,19 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1ff41bf1-6795-47ea-8181-4e65d8bd333b",
+								"exec": [
+									"let number = Math.floor(Math.random() * 1000)\r",
+									"console.log(number)\r",
+									"let NewPassword = \"Adiberichard@\"+ number\r",
+									"console.log(NewPassword)"
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"id": "b3c43882-d808-46f6-acfb-bac809a1a2b3",
@@ -7253,7 +7269,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"adiberichard12@gmail.com\",\r\n    \"Password\": \"Adiberichard@123\",\r\n    \"RetypePassword\": \"Adiberichard@123\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"adiberichard12@gmail.com\",\r\n    \"Password\": \"{{NewPassword}}\",\r\n    \"RetypePassword\": \"{{NewPassword}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7863,6 +7879,10 @@
 		},
 		{
 			"key": "smsPhoneNumber",
+			"value": ""
+		},
+		{
+			"key": "newPassword",
 			"value": ""
 		}
 	]
