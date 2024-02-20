@@ -6661,6 +6661,8 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"var Response = pm.response.json()\r",
+									"pm.environment.set(\"allApplicationId\", Response.data.application.allApplicationId)\r",
+									"\r",
 									"pm.test(\"Verify that isSuccess is true\", function () {\r",
 									"    pm.expect(Response.isSuccess).to.eql(true)\r",
 									"});\r",
@@ -6782,7 +6784,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/V2/Application/download-customer-application-pdf?applicationId={{Applicationid}}",
+							"raw": "{{baseUrl}}/api/V2/Application/download-customer-application-pdf?applicationId={{allApplicationId}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -6795,7 +6797,7 @@
 							"query": [
 								{
 									"key": "applicationId",
-									"value": "{{Applicationid}}"
+									"value": "{{allApplicationId}}"
 								}
 							]
 						}
@@ -6891,7 +6893,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v2/Application/get-customer-application-details?applicationId={{Applicationid}}",
+							"raw": "{{baseUrl}}/api/v2/Application/get-customer-application-details?applicationId={{allApplicationId}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -6904,7 +6906,7 @@
 							"query": [
 								{
 									"key": "applicationId",
-									"value": "{{Applicationid}}"
+									"value": "{{allApplicationId}}"
 								}
 							]
 						}
