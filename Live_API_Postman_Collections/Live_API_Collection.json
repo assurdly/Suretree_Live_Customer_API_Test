@@ -7199,7 +7199,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"Email\": \"adiberichard12@gmail.com\",\r\n\"Password\": \"https://app.nairacompare.ng\",\r\n\"UniqueIDFromFrontEnd\":\"92cd5fec58ba0c7f888-5ae4cb915c0cce4ad1c-1d9017ae315f9e860e3-91f09765aafc7eb987-e088e371301d2e02f\"\r\n\r\n}",
+							"raw": "{\r\n\"Email\": \"fantime1@mailinator.com\",\r\n\"Password\": \"https://app.nairacompare.ng\",\r\n\"UniqueIDFromFrontEnd\":\"92cd5fec58ba0c7f888-5ae4cb915c0cce4ad1c-1d9017ae315f9e860e3-91f09765aafc7eb987-e088e371301d2e02f\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7273,7 +7273,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"adiberichard12@gmail.com\",\r\n    \"Password\": \"{{newPassword}}\",\r\n    \"RetypePassword\": \"{{newPassword}}\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"fantime1@mailinator.com\",\r\n    \"Password\": \"{{newPassword}}\",\r\n    \"RetypePassword\": \"{{newPassword}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
