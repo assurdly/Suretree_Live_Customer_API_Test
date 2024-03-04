@@ -1,0 +1,6 @@
+{
+    "Email": "boltolat@gmail.com",
+    "Password": "Adadadad1&.",
+    "UniqueIDFromFrontEnd": "",
+    "IpAddress": "203.88.135.62"
+}
