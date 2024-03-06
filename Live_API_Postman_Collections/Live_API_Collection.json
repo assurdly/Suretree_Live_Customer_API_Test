@@ -7660,7 +7660,7 @@
 							}
 						}
 					],
-					"id": "fb582aef-4eb7-4438-b885-8cc782d48840",
+					"id": "f661f7dc-53ff-4e42-baca-43e89cbc0adf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -7671,36 +7671,24 @@
 								"token": "{{Auth_token}}"
 							}
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation?accountNumber=3107231019&bankCode=214",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"BankAccountDetailsComponent",
-								"account-number-validation"
-							],
-							"query": [
-								{
-									"key": "accountNumber",
-									"value": "3107231019"
-								},
-								{
-									"key": "bankCode",
-									"value": "214"
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bankCode\": \"033\",\n    \"accountNumber\": \"2059467029\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
-						}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation"
 					},
 					"response": []
 				},
 				{
 					"name": "Invalid account number: Account number Validation",
-					"id": "cbf87f00-d467-4a05-97a1-b69b49452bfc",
+					"id": "bd03b7a6-958a-4645-9eb2-9c890aeb6b05",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -7711,10 +7699,75 @@
 								"token": "{{Auth_token}}"
 							}
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bankCode\": \"033\",\n    \"accountNumber\": \"2059467020\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid bankCode: Account number Validation",
+					"id": "21322e58-2d35-4255-bbfa-31da569d882c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bankCode\": \"060\",\n    \"accountNumber\": \"2059467029\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation"
+					},
+					"response": []
+				},
+				{
+					"name": "Empty bankCode: Account number Validation",
+					"id": "e4b538c6-aaa6-4766-a575-7f9549b16632",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bankCode\": \"\",\n    \"accountNumber\": \"2059467029\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation?accountNumber=9033362914&bankCode=214",
+							"raw": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -7727,11 +7780,8 @@
 							"query": [
 								{
 									"key": "accountNumber",
-									"value": "9033362914"
-								},
-								{
-									"key": "bankCode",
-									"value": "214"
+									"value": "3107231019",
+									"disabled": true
 								}
 							]
 						}
@@ -7739,8 +7789,8 @@
 					"response": []
 				},
 				{
-					"name": "Invalid bankCode: Account number Validation Copy",
-					"id": "e6e87a43-1918-4b2c-8f68-01a3aec9dce9",
+					"name": "Empty accountNumber: Account number Validation",
+					"id": "b15d8cbe-fcd2-4ed2-9ce7-7b2ce210b77a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -7751,115 +7801,23 @@
 								"token": "{{Auth_token}}"
 							}
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation?accountNumber=3107231019&bankCode=215",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"BankAccountDetailsComponent",
-								"account-number-validation"
-							],
-							"query": [
-								{
-									"key": "accountNumber",
-									"value": "3107231019"
-								},
-								{
-									"key": "bankCode",
-									"value": "215"
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bankCode\": \"033\",\n    \"accountNumber\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Empty bankCode: Account number Validation Copy 2",
-					"id": "9b148be5-e64b-402b-8ad5-a4f7a83ed855",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{Auth_token}}"
 							}
 						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation?accountNumber=3107231019&bankCode=",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"BankAccountDetailsComponent",
-								"account-number-validation"
-							],
-							"query": [
-								{
-									"key": "accountNumber",
-									"value": "3107231019"
-								},
-								{
-									"key": "bankCode",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Empty accountNumber: Account number Validation Copy 3",
-					"id": "e929256a-8b05-44b0-859b-064da378f656",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{Auth_token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation?accountNumber=&bankCode=214",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"BankAccountDetailsComponent",
-								"account-number-validation"
-							],
-							"query": [
-								{
-									"key": "accountNumber",
-									"value": ""
-								},
-								{
-									"key": "bankCode",
-									"value": "214"
-								}
-							]
-						}
+						"url": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation"
 					},
 					"response": []
 				}
 			],
-			"id": "db2fe429-878a-4082-be5e-073c1b7e342b"
+			"id": "0da6fd92-01ff-4de9-b9a8-79d35f3c82af"
 		}
 	],
 	"event": [
