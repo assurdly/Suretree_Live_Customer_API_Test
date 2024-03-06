@@ -7688,6 +7688,41 @@
 				},
 				{
 					"name": "Invalid account number: Account number Validation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "329300b0-a468-4ed6-acb9-5e99d9432f57",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that isSuccess is null\", function () {",
+									"    pm.expect(Response.isSuccess).to.eql(false)",
+									"});",
+									"pm.test(\"ErrorMessage returns 'Could not resolve account name. Check parameters or try again.'\", function () {",
+									"    pm.expect(Response.errors).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
+									"});",
+									"pm.test(\"Verify that statusCode is 400\", function () {",
+									"    pm.expect(Response.statusCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4763b3f2-23ad-4ab2-aa1e-36f5bbdb7b97",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "bd03b7a6-958a-4645-9eb2-9c890aeb6b05",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -7716,6 +7751,41 @@
 				},
 				{
 					"name": "Invalid bankCode: Account number Validation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0631ed4f-6349-45e3-8675-7f9466246ef3",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that isSuccess is null\", function () {",
+									"    pm.expect(Response.isSuccess).to.eql(false)",
+									"});",
+									"pm.test(\"ErrorMessage returns 'Could not resolve account name. Check parameters or try again.'\", function () {",
+									"    pm.expect(Response.errors).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
+									"});",
+									"pm.test(\"Verify that statusCode is 400\", function () {",
+									"    pm.expect(Response.statusCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9f65dfb6-58cd-4596-927f-31b7bec29254",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "21322e58-2d35-4255-bbfa-31da569d882c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -7744,6 +7814,41 @@
 				},
 				{
 					"name": "Empty bankCode: Account number Validation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f409474f-ae32-4252-83cd-062faea4b108",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that isSuccess is null\", function () {",
+									"    pm.expect(Response.isSuccess).to.eql(false)",
+									"});",
+									"pm.test(\"ErrorMessage returns 'Could not resolve account name. Check parameters or try again.'\", function () {",
+									"    pm.expect(Response.errors).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
+									"});",
+									"pm.test(\"Verify that statusCode is 400\", function () {",
+									"    pm.expect(Response.statusCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "71dac02c-8fba-4fbd-bb48-1f01071565ee",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "e4b538c6-aaa6-4766-a575-7f9549b16632",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -7766,30 +7871,47 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"BankAccountDetailsComponent",
-								"account-number-validation"
-							],
-							"query": [
-								{
-									"key": "accountNumber",
-									"value": "3107231019",
-									"disabled": true
-								}
-							]
-						}
+						"url": "{{baseUrl}}/api/v2/BankAccountDetailsComponent/account-number-validation"
 					},
 					"response": []
 				},
 				{
 					"name": "Empty accountNumber: Account number Validation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d2821d98-9fda-480a-ad27-bab6efcc5ce2",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that isSuccess is null\", function () {",
+									"    pm.expect(Response.isSuccess).to.eql(false)",
+									"});",
+									"pm.test(\"ErrorMessage returns 'Could not resolve account name. Check parameters or try again.'\", function () {",
+									"    pm.expect(Response.errors).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
+									"});",
+									"pm.test(\"Verify that statusCode is 400\", function () {",
+									"    pm.expect(Response.statusCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "150a0463-e535-49ec-950c-5e9867d5764f",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "b15d8cbe-fcd2-4ed2-9ce7-7b2ce210b77a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
