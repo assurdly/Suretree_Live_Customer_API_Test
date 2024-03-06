@@ -1,0 +1,11 @@
+{
+    "Transfer-Encoding": "chunked",
+    "Content-Type": "text/plain; charset=utf-8",
+    "Server": "Microsoft-IIS/10.0",
+    "Strict-Transport-Security": "max-age=2592000",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "origin-when-cross-origin",
+    "Permissions-Policy": "autoplay=(self), camera=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), microphone=(self)",
+    "Date": "Wed, 06 Mar 2024 04:07:27 GMT"
+}

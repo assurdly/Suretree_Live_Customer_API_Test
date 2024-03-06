@@ -1,0 +1,12 @@
+launch_status failed=1 1709698102000000000
+launch_status broken=0 1709698102000000000
+launch_status passed=134 1709698102000000000
+launch_status skipped=0 1709698102000000000
+launch_status unknown=0 1709698102000000000
+launch_time duration=48496 1709698102000000000
+launch_time min_duration=86 1709698102000000000
+launch_time max_duration=27240 1709698102000000000
+launch_time sum_duration=48164 1709698102000000000
+launch_problems product_defects=1 1709698102000000000
+launch_retries retries=0 1709698102000000000
+launch_retries run=135 1709698102000000000
