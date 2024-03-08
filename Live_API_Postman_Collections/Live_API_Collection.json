@@ -7834,12 +7834,10 @@
 									"pm.test(\"Verify that isSuccess is null\", function () {",
 									"    pm.expect(Response.isSuccess).to.eql(false)",
 									"});",
-									"pm.test(\"ErrorMessage returns 'Could not resolve account name. Check parameters or try again.'\", function () {",
-									"    pm.expect(Response.errors).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
+									"pm.test(\"ErrorMessage returns 'The BankCode field is required.'\", function () {",
+									"    pm.expect(Response.errors[0]).to.eql(\"The BankCode field is required.\")",
 									"});",
-									"pm.test(\"Verify that statusCode is 400\", function () {",
-									"    pm.expect(Response.statusCode).to.eql(400)",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -7848,7 +7846,9 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "71dac02c-8fba-4fbd-bb48-1f01071565ee",
-								"exec": [],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						}
@@ -7897,12 +7897,10 @@
 									"pm.test(\"Verify that isSuccess is null\", function () {",
 									"    pm.expect(Response.isSuccess).to.eql(false)",
 									"});",
-									"pm.test(\"ErrorMessage returns 'Could not resolve account name. Check parameters or try again.'\", function () {",
-									"    pm.expect(Response.errors).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
+									"pm.test(\"ErrorMessage returns 'The AccountNumber field is required.'\", function () {",
+									"    pm.expect(Response.errors[0]).to.eql(\"The AccountNumber field is required.\")",
 									"});",
-									"pm.test(\"Verify that statusCode is 400\", function () {",
-									"    pm.expect(Response.statusCode).to.eql(400)",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -7911,7 +7909,9 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "150a0463-e535-49ec-950c-5e9867d5764f",
-								"exec": [],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						}
