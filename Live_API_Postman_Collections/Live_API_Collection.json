@@ -7705,7 +7705,7 @@
 									"    pm.expect(Response.isSuccess).to.eql(false)",
 									"});",
 									"pm.test(\"ErrorMessage returns 'Could not resolve account name. Check parameters or try again.'\", function () {",
-									"    pm.expect(Response.errors).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
+									"    pm.expect(Response.errors[0]).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
 									"});",
 									"pm.test(\"Verify that statusCode is 400\", function () {",
 									"    pm.expect(Response.statusCode).to.eql(400)",
@@ -7718,7 +7718,9 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "4763b3f2-23ad-4ab2-aa1e-36f5bbdb7b97",
-								"exec": [],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						}
@@ -7767,8 +7769,8 @@
 									"pm.test(\"Verify that isSuccess is null\", function () {",
 									"    pm.expect(Response.isSuccess).to.eql(false)",
 									"});",
-									"pm.test(\"ErrorMessage returns 'Could not resolve account name. Check parameters or try again.'\", function () {",
-									"    pm.expect(Response.errors).to.eql(\"Could not resolve account name. Check parameters or try again.\")",
+									"pm.test(\"ErrorMessage returns 'Unknown bank code.'\", function () {",
+									"    pm.expect(Response.errors[0]).to.eql(\"Unknown bank code: 060\")",
 									"});",
 									"pm.test(\"Verify that statusCode is 400\", function () {",
 									"    pm.expect(Response.statusCode).to.eql(400)",
@@ -7781,7 +7783,9 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "9f65dfb6-58cd-4596-927f-31b7bec29254",
-								"exec": [],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						}
