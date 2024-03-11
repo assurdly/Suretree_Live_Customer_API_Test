@@ -1,4 +1,0 @@
-{
-    "AuthToken": "",
-    "RefreshToken": "0da71622-1ec9-4ecb-a278-4d7922eefc71"
-}
