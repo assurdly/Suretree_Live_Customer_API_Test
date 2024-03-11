@@ -7944,6 +7944,42 @@
 				}
 			],
 			"id": "0da6fd92-01ff-4de9-b9a8-79d35f3c82af"
+		},
+		{
+			"name": "Investment Applications- Coming soon page",
+			"item": [
+				{
+					"name": "Ability to View the \"Coming soon\" page when there are no products onboarded for the product category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7e8a79f1-e3f2-4dfc-ac83-0f71ca54d57a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name has 'OK' \", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f5f213c3-e998-4516-8c62-c4dc503dadb5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://qa-api.nairacompare.ng/api/categories/GetAllMenu"
+					},
+					"response": []
+				}
+			],
+			"id": "02f4529d-56fb-418e-9133-4acaec0b3d7f"
 		}
 	],
 	"event": [
