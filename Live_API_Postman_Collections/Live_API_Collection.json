@@ -8097,7 +8097,9 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "f1d8fa9b-9f0f-48b8-8e1b-e56a65b485eb",
-								"exec": [],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						}
@@ -8116,7 +8118,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/loans/getloan/?id=4c63dd4d-ec87-4e51-8c79-0ab57eb70e14",
+							"raw": "{{baseUrl}}/api/loans/getloan/?id=a5bd7fed-5d7d-4f7c-be10-9c8c44d414ce",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -8129,7 +8131,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "4c63dd4d-ec87-4e51-8c79-0ab57eb70e14"
+									"value": "a5bd7fed-5d7d-4f7c-be10-9c8c44d414ce"
 								}
 							]
 						}
@@ -8251,7 +8253,9 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "bb6ebe94-e4f9-4ac0-bc6b-c812cfdbfcac",
-								"exec": [],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						}
@@ -8271,7 +8275,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"PageNumber\": 1,\n    \"RowsPerPage\": 10,\n    \"Total\": 13,\n    \"TotalPages\": 0,\n    \"Amount\": 0,\n    \"Duration\": 0,\n    \"Providers\": [],\n    \"SearchRequestQuery\": \"\",\n    \"SortBy\": 1,\n    \"OrderIn\": 1,\n    \"CategoryId\": \"082d28f7-0f23-4336-9bf8-2508a2674d02\",\n    \"IsWantToRemoveProviderCanTakeAppData\": true\n}",
+							"raw": "{\n    \"PageNumber\": 1,\n    \"RowsPerPage\": 10,\n    \"Total\": 13,\n    \"TotalPages\": 0,\n    \"Amount\": 0,\n    \"Duration\": 0,\n    \"Providers\": [],\n    \"SearchRequestQuery\": \"\",\n    \"SortBy\": 1,\n    \"OrderIn\": 1,\n    \"CategoryId\": \"2fde931f-bfcd-4427-9fed-ad843270f1d2\",\n    \"IsWantToRemoveProviderCanTakeAppData\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
