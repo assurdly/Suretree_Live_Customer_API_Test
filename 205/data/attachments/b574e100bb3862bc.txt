@@ -1,5 +1,0 @@
-{
-    "Email": "adiberichard12@gmail.com",
-    "Password": "Adiberichard@141",
-    "RetypePassword": "Adiberichard@141"
-}

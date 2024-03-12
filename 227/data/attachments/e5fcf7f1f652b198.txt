@@ -1,0 +1,1 @@
+{"message":"Credit score status for ADIBE RICHARD","data":{"customerId":"6f0f0344-4c13-4e06-a5df-29cab489c206","customerName":"ADIBE RICHARD","score":618,"lastCheckedOn":"2024-03-12T03:54:06.85","checksCount":299,"canCheckFree":false,"lastReportId":"8a641c10-de30-4f4d-8643-50dcd0971c25"},"code":200,"success":true}
