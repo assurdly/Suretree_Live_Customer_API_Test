@@ -8043,7 +8043,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"queryString\": \"Fresh Kill\",\n  \"rowsPerPage\": 10,\n  \"pageNumber\": 1,\n  \"total\": 0,\n  \"totalPages\": 0\n}",
+							"raw": "{\n  \"queryString\": \"\",\n  \"rowsPerPage\": 10,\n  \"pageNumber\": 1,\n  \"total\": 0,\n  \"totalPages\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -8212,7 +8212,7 @@
 			"id": "54be5930-d29e-46b1-a330-f4ce97f1a21d"
 		},
 		{
-			"name": "Search Loans Copy",
+			"name": "Search Loans",
 			"item": [
 				{
 					"name": "Search Loans",
