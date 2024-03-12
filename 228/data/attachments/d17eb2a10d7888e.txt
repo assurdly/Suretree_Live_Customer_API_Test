@@ -1,0 +1,5 @@
+{
+    "Email": "fantime1@mailinator.com",
+    "Password": "Adiberichard@76",
+    "RetypePassword": "Adiberichard@76"
+}
