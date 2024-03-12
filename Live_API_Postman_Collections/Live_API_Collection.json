@@ -7980,6 +7980,310 @@
 				}
 			],
 			"id": "02f4529d-56fb-418e-9133-4acaec0b3d7f"
+		},
+		{
+			"name": "Get Loan Product",
+			"item": [
+				{
+					"name": "Get Loan Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c8ecfdc9-f005-4c1d-a4f8-4bb53290ad98",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test successMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.SuccessMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test errorMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test responseCode\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ResponseCode).to.eql(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3806735b-918d-432f-8b9c-a01d6b2b25ad",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "66b670df-0a62-4c3d-80a3-b91a5046c834",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"queryString\": \"Fresh Kill\",\n  \"rowsPerPage\": 10,\n  \"pageNumber\": 1,\n  \"total\": 0,\n  \"totalPages\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/products/get-loan-products"
+					},
+					"response": []
+				}
+			],
+			"id": "2d609a03-87f1-413d-b5a6-8e6f30206c33"
+		},
+		{
+			"name": "Get Loan",
+			"item": [
+				{
+					"name": "Get Loan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d32fe42a-8e8d-4c3e-acbd-512898c7df46",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test successMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.SuccessMessage).to.eql(\"Saved successfully.\");",
+									"});",
+									"",
+									"pm.test(\"Your test errorMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test responseCode\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ResponseCode).to.eql(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1d8fa9b-9f0f-48b8-8e1b-e56a65b485eb",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4be7f466-54f3-4372-b8e5-6de601711ab5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/loans/getloan/?id=4c63dd4d-ec87-4e51-8c79-0ab57eb70e14",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"loans",
+								"getloan",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4c63dd4d-ec87-4e51-8c79-0ab57eb70e14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loan - Non-existing ID",
+					"id": "3d7dbaa0-5a39-41c3-a1e8-257b0ce3e89e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/loans/getloan/?id=4c63dd4d-ec87-4e51-8c79-0ab57eb70e10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"loans",
+								"getloan",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4c63dd4d-ec87-4e51-8c79-0ab57eb70e10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loan - ID blank",
+					"id": "78d1b06e-f1e8-4a23-9907-b82f05ecf0b3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/loans/getloan/?id=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"loans",
+								"getloan",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "54be5930-d29e-46b1-a330-f4ce97f1a21d"
+		},
+		{
+			"name": "Search Loans Copy",
+			"item": [
+				{
+					"name": "Search Loans",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cc2f3ef9-2872-4c80-86bd-d32797411591",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test successMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.SuccessMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test errorMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test responseCode\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ResponseCode).to.eql(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "bb6ebe94-e4f9-4ac0-bc6b-c812cfdbfcac",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "948e940a-2d36-4051-bbe8-f7f8d3248d03",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"PageNumber\": 1,\n    \"RowsPerPage\": 10,\n    \"Total\": 13,\n    \"TotalPages\": 0,\n    \"Amount\": 0,\n    \"Duration\": 0,\n    \"Providers\": [],\n    \"SearchRequestQuery\": \"\",\n    \"SortBy\": 1,\n    \"OrderIn\": 1,\n    \"CategoryId\": \"082d28f7-0f23-4336-9bf8-2508a2674d02\",\n    \"IsWantToRemoveProviderCanTakeAppData\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/loans/search"
+					},
+					"response": []
+				}
+			],
+			"id": "86986743-e1c5-4d4a-953c-a5951eae80fe"
 		}
 	],
 	"event": [
